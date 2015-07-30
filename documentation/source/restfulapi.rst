@@ -6,7 +6,7 @@ RESTful implemetation
 
 This illustration shows the relationship between the api and the deployment process of the Coach product:
 
-.. image:: images\coachintegrationdiagram.png      
+.. image:: _images\coachintegrationdiagram.png      
    :alt: alternate text
    :align: center
 
