@@ -88,14 +88,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#download-restful-api-middleware">Download RESTFul api middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#download-restful-api-middleware">Download RESTful api middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#confirm-middleware-deployment-works">Confirm middleware deployment works</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="build.html">Create your Connector</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="build.html#build-search-criteria-via">Build search criteria via</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#test-your-connector">test your connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html#test-your-connector">Test your connector</a></li>
 <li class="toctree-l2"><a class="reference internal" href="build.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
@@ -186,7 +186,11 @@
 <h1>Server Deployment<a class="headerlink" href="#server-deployment" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="chef">
 <h2>Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h2>
-<p>The following is a chef script that can be used to preconfigure your server:</p>
+<p>The following is a chef script.  Its purpose is to help you quickly preconfigure the server where Coach will be deployed:</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Minimum requirements are Windows Server 2012 R2, SQL Server 2014 and IIS 8</p>
+</div>
 <div class="highlight-ruby"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -241,7 +245,7 @@
 52
 53
 54
-55</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1"># Cookbook Name:: learn_chef_iis</span>
+55</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1"># Cookbook Name:: coach_chef_web</span>
 <span class="c1"># Recipe:: default</span>
 <span class="c1">#</span>
 <span class="c1"># Copyright (c) 2015 Qualtrak Solutions Ltd, All Rights Reserved.</span>

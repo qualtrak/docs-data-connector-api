@@ -1,4 +1,4 @@
-# Cookbook Name:: learn_chef_iis
+# Cookbook Name:: coach_chef_web
 # Recipe:: default
 #
 # Copyright (c) 2015 Qualtrak Solutions Ltd, All Rights Reserved.
