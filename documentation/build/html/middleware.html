@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; dataconnectorapi 0.0.1 documentation</title>
+  <title>Middleware &mdash; dataconnectorapi 0.0.1 documentation</title>
   
 
   
@@ -30,7 +30,9 @@
   
 
   
-    <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/> 
+    <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
+        <link rel="next" title="Getting Started" href="gettingstarted.html"/>
+        <link rel="prev" title="Qualtrak" href="qualtrak.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -55,7 +57,7 @@
 
         
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -69,18 +71,18 @@
         
           
           
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="qualtrak.html">Qualtrak</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="qualtrak.html#who-we-are">Who we are</a></li>
 <li class="toctree-l2"><a class="reference internal" href="qualtrak.html#what-we-do">What we do</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="middleware.html">Middleware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#why">Why?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#how-does-it-solve-it">How does it solve it?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#ioc-container">IoC Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#restful-api">RESTful API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Middleware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#why">Why?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-problem-does-this-solve">What problem does this solve?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-does-it-solve-it">How does it solve it?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ioc-container">IoC Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restful-api">RESTful API</a></li>
 </ul>
 </li>
 </ul>
@@ -92,7 +94,7 @@
 <li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#wire-up-your-api">Wire up your api</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="restfulapi.html">RESTful API</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="restfulapi.html">Source Code</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restfulapi.html#restful-implemetation">RESTful implemetation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
@@ -101,21 +103,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controllers.html#users">Users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-users">Get list of users</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#users">Users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#recordings">Recordings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-recoring-url">Get recoring url</a></li>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-recordings">Get list of recordings</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="controllers.html#score">Score</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="controllers.html#push-score">Push Score</a></li>
 </ul>
 </li>
 </ul>
@@ -123,8 +114,6 @@
 <li class="toctree-l1"><a class="reference internal" href="poco.html">Plain old class objects</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="poco.html#recorderuserinfo">RecorderUserInfo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="poco.html#recordinginfo">RecordingInfo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="poco.html#searchcriteria">SearchCriteria</a></li>
-<li class="toctree-l2"><a class="reference internal" href="poco.html#dataconnectorevaluationscore">DataConnectorEvaluationScore</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a><ul>
@@ -156,8 +145,12 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Middleware</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/middleware.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
@@ -165,22 +158,67 @@
 </div>
           <div role="main" class="document">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="middleware">
+<h1>Middleware<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="why">
+<h2>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h2>
+<p>The Coach product has a dependency on recorder data.  To get this data into Coach it pulls data from a recorder by SOA.  This process can involve many hours of coding for each recorder and end client.</p>
+</div>
+<div class="section" id="what-problem-does-this-solve">
+<h2>What problem does this solve?<a class="headerlink" href="#what-problem-does-this-solve" title="Permalink to this headline">¶</a></h2>
+<p>Remove your reliance on Qualtrak to bring changes to your api into production.  Facilitates a robust approach to supporting mulitple deployments through use of Inversion of Control <code class="docutils literal"><span class="pre">IoC</span></code>.</p>
+</div>
+<div class="section" id="how-does-it-solve-it">
+<h2>How does it solve it?<a class="headerlink" href="#how-does-it-solve-it" title="Permalink to this headline">¶</a></h2>
+<p>To help decouple the Coach product from the recorder by the implementation of RESTful service and Inversion of Control.</p>
+<div class="section" id="ioc-container">
+<h3>IoC Container<a class="headerlink" href="#ioc-container" title="Permalink to this headline">¶</a></h3>
+<p>In software engineering, inversion of control (IoC)  <a class="footnote-reference" href="#f1" id="id1">[1]</a>  describes a design in which custom-written portions of a computer program receive the flow of control from a generic, reusable library.  Martin Fowler walks you through an implementation <a class="footnote-reference" href="#f2" id="id2">[2]</a> and compares IoC with DI here <a class="footnote-reference" href="#f3" id="id3">[3]</a>.  Dependency Injection (DI) is another programming pattern.</p>
+</div>
+<div class="section" id="restful-api">
+<h3>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h3>
+<p>In computing, Representational State Transfer (REST) is a software architecture style for building scalable web services <a class="footnote-reference" href="#f4" id="id4">[4]</a> .</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Inversion_of_control">https://en.wikipedia.org/wiki/Inversion_of_control</a> - Wikipedia</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://www.martinfowler.com/articles/injection.html">http://www.martinfowler.com/articles/injection.html</a> - Martin Fowler</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[3]</a></td><td><a class="reference external" href="http://martinfowler.com/bliki/InversionOfControl.html">http://martinfowler.com/bliki/InversionOfControl.html</a> - Martin Fowler</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="f4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[4]</a></td><td><a class="reference external" href="https://en.wikipedia.org/wiki/Representational_state_transfer">https://en.wikipedia.org/wiki/Representational_state_transfer</a> - Wikipedia</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="gettingstarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="qualtrak.html" class="btn btn-neutral" title="Qualtrak" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
@@ -217,7 +255,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
 
@@ -233,14 +270,7 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>
