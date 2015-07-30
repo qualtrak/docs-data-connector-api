@@ -1,8 +1,5 @@
-RESTful API
-===========
-
 RESTful implemetation
----------------------
+=====================
 
 This illustration shows the relationship between the api and the deployment process of the Coach product:
 

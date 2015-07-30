@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>RESTful API &mdash; dataconnectorapi 0.0.1 documentation</title>
+  <title>RESTful implemetation &mdash; dataconnectorapi 0.0.1 documentation</title>
   
 
   
@@ -30,9 +30,7 @@
   
 
   
-    <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Controllers" href="controllers.html"/>
-        <link rel="prev" title="Generate SQL Script" href="artefact.html"/> 
+    <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -71,10 +69,21 @@
         
           
           
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="qualtrak.html">Qualtrak</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="qualtrak.html#who-we-are">Who we are</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qualtrak.html#what-we-do">What we do</a></li>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installapi.html">Install API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installapi.html#download-restful-api-middleware">Download RESTful api middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installapi.html#confirm-middleware-deployment-works">Confirm middleware deployment works</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Create your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="build.html#build-search-criteria-via">Build search criteria via</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#test-your-connector">Test your connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="middleware.html">Middleware</a><ul>
@@ -87,25 +96,17 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#download-restful-api-middleware">Download RESTful api middleware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#confirm-middleware-deployment-works">Confirm middleware deployment works</a></li>
+<li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="middleware.html#why">Why?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="middleware.html#how-does-it-solve-it">How does it solve it?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="middleware.html#ioc-container">IoC Container</a></li>
+<li class="toctree-l4"><a class="reference internal" href="middleware.html#restful-api">RESTful API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="build.html">Create your Connector</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="build.html#build-search-criteria-via">Build search criteria via</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#test-your-connector">Test your connector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="build.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">RESTful API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#restful-implemetation">RESTful implemetation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#target-different-deployments">Target different deployments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#controllers">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#handlers">Handlers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
@@ -144,6 +145,11 @@
 <li class="toctree-l2"><a class="reference internal" href="releasehistory.html#id1">1.0.0 (2015-08-21)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="qualtrak.html">Qualtrak</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="qualtrak.html#who-we-are">Who we are</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qualtrak.html#what-we-do">What we do</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
 </ul>
 
@@ -169,7 +175,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>RESTful API</li>
+    <li>RESTful implemetation</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -182,16 +188,13 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="restful-api">
-<h1>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="restful-implemetation">
-<h2>RESTful implemetation<a class="headerlink" href="#restful-implemetation" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="restful-implemetation">
+<h1>RESTful implemetation<a class="headerlink" href="#restful-implemetation" title="Permalink to this headline">¶</a></h1>
 <p>This illustration shows the relationship between the api and the deployment process of the Coach product:</p>
 <img alt="alternate text" class="align-center" src="_images/coachintegrationdiagram.png" />
 <p>In the above illustration you see the <code class="docutils literal"><span class="pre">Coach</span></code> product.  <code class="docutils literal"><span class="pre">Coach</span></code> calls on end points [e.g. users] to either pull or push data.</p>
 <p>These end points in turn will call out to a recorder via a <code class="docutils literal"><span class="pre">Connector</span></code> implementation.  The <code class="docutils literal"><span class="pre">Connector</span></code> implementation will be code that you specifically write to talk to your recorder.  In this <code class="docutils literal"><span class="pre">Connector</span></code> you will (a) reference your own api and (b) interpret that data [e.g. search criteria] that is being passed from the RESTful end point.</p>
 <p>The last [far right] part of this illustration explains how you test your implementation and what part this plays during the installation.</p>
-</div>
 <div class="section" id="plug-your-own-or-other-3rd-party-api-s-into-middleware">
 <h2>Plug your own (or other 3rd party) api&#8217;s into middleware<a class="headerlink" href="#plug-your-own-or-other-3rd-party-api-s-into-middleware" title="Permalink to this headline">¶</a></h2>
 <p>The RESTful api is the container that you use to hook into a <code class="docutils literal"><span class="pre">connector</span></code>.  The <code class="docutils literal"><span class="pre">connector</span></code> has the bare minimum to manage the communication with the RESTful api.  However, if the <code class="docutils literal"><span class="pre">connector</span></code> requires a new method then this is completely in your control.  You have the freedom to modify the caller [RESTful api code base] as well as the callee [connector].</p>
@@ -228,15 +231,6 @@
 
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="controllers.html" class="btn btn-neutral float-right" title="Controllers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="artefact.html" class="btn btn-neutral" title="Generate SQL Script" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

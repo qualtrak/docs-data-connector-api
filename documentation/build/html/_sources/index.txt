@@ -15,16 +15,13 @@ Contents:
 .. toctree::
    :maxdepth: 1
    
-   qualtrak
-   middleware
-   gettingstarted
-   build   
-   artefact
-   restfulapi
+   gettingstarted   
+   concept
    controllers
    poco
    server
    releasehistory
+   qualtrak
    license
 
 
