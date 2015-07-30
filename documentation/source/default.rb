@@ -1,13 +1,7 @@
-#
-# Cookbook Name:: coach_chef_web
-# Recipe:: default
-#
-# Copyright (c) 2015 The Authors, All Rights Reserved.
-#
 # Cookbook Name:: learn_chef_iis
 # Recipe:: default
 #
-# Copyright (c) 2015 The Authors, All Rights Reserved.
+# Copyright (c) 2015 Qualtrak Solutions Ltd, All Rights Reserved.
 powershell_script 'Install IIS' do
   code 'Add-WindowsFeature Web-Server'
   guard_interpreter :powershell_script
@@ -60,13 +54,4 @@ service 'w3svc' do
     action [:enable, :start]
 end
 
-node.default['iis']['username'] = 'Garrard Kitchen'
-node.default['iis']['machinename'] = '' #$env:computername
-template 'c:\inetpub\wwwroot\Default.htm' do
-  source 'index.html.erb'
-  variables(
-    :username => node.default['iis']['username'],
-    :computername => node.default['iis']['machinename'],
-    :message => node[:remote][:message]
-  )
-end
+

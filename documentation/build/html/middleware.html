@@ -88,13 +88,19 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#download-api">Download api</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#install-api">Install api</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#test-api">Test api</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#wire-up-your-api">Wire up your api</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#download-restful-api-middleware">Download RESTFul api middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html#confirm-middleware-deployment-works">Confirm middleware deployment works</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="restfulapi.html">Source Code</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="build.html">Create your Connector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="build.html#build-search-criteria-via">Build search criteria via</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html#test-your-connector">test your connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restfulapi.html">RESTful API</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="restfulapi.html#restful-implemetation">RESTful implemetation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
 <li class="toctree-l2"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
@@ -103,10 +109,21 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="controllers.html#users">Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#users">Users</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-users">Get list of users</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#recordings">Recordings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-recoring-url">Get recoring url</a></li>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-recordings">Get list of recordings</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#score">Score</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#push-score">Push Score</a></li>
 </ul>
 </li>
 </ul>
@@ -114,6 +131,13 @@
 <li class="toctree-l1"><a class="reference internal" href="poco.html">Plain old class objects</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="poco.html#recorderuserinfo">RecorderUserInfo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="poco.html#recordinginfo">RecordingInfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poco.html#searchcriteria">SearchCriteria</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poco.html#dataconnectorevaluationscore">DataConnectorEvaluationScore</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poco.html#datacontractrecordinglistfilter">DataContractRecordingListFilter</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="server.html">Server Deployment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="server.html#chef">Chef</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a><ul>
@@ -160,17 +184,18 @@
             
   <div class="section" id="middleware">
 <h1>Middleware<a class="headerlink" href="#middleware" title="Permalink to this headline">¶</a></h1>
+<p>The following sections talk you through the reason why we have done what have done in the way we have done it.</p>
 <div class="section" id="why">
 <h2>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h2>
 <p>The Coach product has a dependency on recorder data.  To get this data into Coach it pulls data from a recorder by SOA.  This process can involve many hours of coding for each recorder and end client.</p>
 </div>
 <div class="section" id="what-problem-does-this-solve">
 <h2>What problem does this solve?<a class="headerlink" href="#what-problem-does-this-solve" title="Permalink to this headline">¶</a></h2>
-<p>Remove your reliance on Qualtrak to bring changes to your api into production.  Facilitates a robust approach to supporting mulitple deployments through use of Inversion of Control <code class="docutils literal"><span class="pre">IoC</span></code>.</p>
+<p>Remove your reliance on Qualtrak to bring changes to your api into production.  Facilitates a robust approach to supporting multiple deployments through use of Inversion of Control <code class="docutils literal"><span class="pre">IoC</span></code>.</p>
 </div>
 <div class="section" id="how-does-it-solve-it">
 <h2>How does it solve it?<a class="headerlink" href="#how-does-it-solve-it" title="Permalink to this headline">¶</a></h2>
-<p>To help decouple the Coach product from the recorder by the implementation of RESTful service and Inversion of Control.</p>
+<p>Helps decouple the Coach product from a recorder by the use of RESTful api service in conjuntion with Inversion of Control.</p>
 <div class="section" id="ioc-container">
 <h3>IoC Container<a class="headerlink" href="#ioc-container" title="Permalink to this headline">¶</a></h3>
 <p>In software engineering, inversion of control (IoC)  <a class="footnote-reference" href="#f1" id="id1">[1]</a>  describes a design in which custom-written portions of a computer program receive the flow of control from a generic, reusable library.  Martin Fowler walks you through an implementation <a class="footnote-reference" href="#f2" id="id2">[2]</a> and compares IoC with DI here <a class="footnote-reference" href="#f3" id="id3">[3]</a>.  Dependency Injection (DI) is another programming pattern.</p>

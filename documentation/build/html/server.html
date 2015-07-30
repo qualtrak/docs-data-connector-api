@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>RESTful API &mdash; dataconnectorapi 0.0.1 documentation</title>
+  <title>Server Deployment &mdash; dataconnectorapi 0.0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Controllers" href="controllers.html"/>
-        <link rel="prev" title="Generate SQL Script" href="artefact.html"/> 
+        <link rel="next" title="Release History" href="releasehistory.html"/>
+        <link rel="prev" title="Plain old class objects" href="poco.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -100,12 +100,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">RESTful API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#restful-implemetation">RESTful implemetation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#target-different-deployments">Target different deployments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#controllers">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#handlers">Handlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restfulapi.html">RESTful API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#restful-implemetation">RESTful implemetation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
@@ -136,8 +136,8 @@
 <li class="toctree-l2"><a class="reference internal" href="poco.html#datacontractrecordinglistfilter">DataContractRecordingListFilter</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server Deployment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="server.html#chef">Chef</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Server Deployment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#chef">Chef</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a><ul>
@@ -169,11 +169,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>RESTful API</li>
+    <li>Server Deployment</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/restfulapi.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/server.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -182,46 +182,122 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="restful-api">
-<h1>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="restful-implemetation">
-<h2>RESTful implemetation<a class="headerlink" href="#restful-implemetation" title="Permalink to this headline">¶</a></h2>
-<p>This illustration shows the relationship between the api and the deployment process of the Coach product:</p>
-<img alt="alternate text" class="align-center" src="_images/coachintegrationdiagram.png" />
-<p>In the above illustration you see the <code class="docutils literal"><span class="pre">Coach</span></code> product.  <code class="docutils literal"><span class="pre">Coach</span></code> calls on end points [e.g. users] to either pull or push data.</p>
-<p>These end points in turn will call out to a recorder via a <code class="docutils literal"><span class="pre">Connector</span></code> implementation.  The <code class="docutils literal"><span class="pre">Connector</span></code> implementation will be code that you specifically write to talk to your recorder.  In this <code class="docutils literal"><span class="pre">Connector</span></code> you will (a) reference your own api and (b) interpret that data [e.g. search criteria] that is being passed from the RESTful end point.</p>
-<p>The last [far right] part of this illustration explains how you test your implementation and what part this plays during the installation.</p>
-</div>
-<div class="section" id="plug-your-own-or-other-3rd-party-api-s-into-middleware">
-<h2>Plug your own (or other 3rd party) api&#8217;s into middleware<a class="headerlink" href="#plug-your-own-or-other-3rd-party-api-s-into-middleware" title="Permalink to this headline">¶</a></h2>
-<p>The RESTful api is the container that you use to hook into a <code class="docutils literal"><span class="pre">connector</span></code>.  The <code class="docutils literal"><span class="pre">connector</span></code> has the bare minimum to manage the communication with the RESTful api.  However, if the <code class="docutils literal"><span class="pre">connector</span></code> requires a new method then this is completely in your control.  You have the freedom to modify the caller [RESTful api code base] as well as the callee [connector].</p>
-</div>
-<div class="section" id="target-different-deployments">
-<h2>Target different deployments<a class="headerlink" href="#target-different-deployments" title="Permalink to this headline">¶</a></h2>
-<p>This robust RESTful api approach not only offers you a way to quickly code transactions with your api but the other benefit is removes the complexity of using minor permutations of your api with different end-clients through the use of IoC.</p>
-</div>
-<div class="section" id="controllers">
-<h2>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h2>
-<p>What follows is a short description of each of the RESTful API end points:</p>
-<dl class="docutils">
-<dt>Users</dt>
-<dd>A user from the Recorder</dd>
-<dt>Recordings</dt>
-<dd>Either a list of recordings or the url of a single recording</dd>
-<dt>Score</dt>
-<dd>Pass evaluated recording scores back to your recorder system</dd>
-<dt>Connectors</dt>
-<dd>Used to test connectivity</dd>
-<dt>Stream</dt>
-<dd>A proxy to download the recording to a media player</dd>
-</dl>
-</div>
-<div class="section" id="handlers">
-<h2>Handlers<a class="headerlink" href="#handlers" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>BasicAuthenticationGetMediaHandler</dt>
-<dd>A proxy to download the recording when needing to satisfy a Basic Authentication challenge</dd>
-</dl>
+  <div class="section" id="server-deployment">
+<h1>Server Deployment<a class="headerlink" href="#server-deployment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="chef">
+<h2>Chef<a class="headerlink" href="#chef" title="Permalink to this headline">¶</a></h2>
+<p>The following is a chef script that can be used to preconfigure your server:</p>
+<div class="highlight-ruby"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</pre></div></td><td class="code"><div class="highlight"><pre><span class="c1"># Cookbook Name:: learn_chef_iis</span>
+<span class="c1"># Recipe:: default</span>
+<span class="c1">#</span>
+<span class="c1"># Copyright (c) 2015 Qualtrak Solutions Ltd, All Rights Reserved.</span>
+<span class="n">powershell_script</span> <span class="s1">&#39;Install IIS&#39;</span> <span class="k">do</span>
+  <span class="n">code</span> <span class="s1">&#39;Add-WindowsFeature Web-Server&#39;</span>
+  <span class="n">guard_interpreter</span> <span class="ss">:powershell_script</span>
+  <span class="n">not_if</span> <span class="s2">&quot;(Get-WindowsFeature -Name Web-Server).Installed&quot;</span>
+<span class="k">end</span>
+
+<span class="n">powershell_script</span> <span class="s1">&#39;Install NET-Framework-45-Core&#39;</span> <span class="k">do</span>
+  <span class="n">code</span> <span class="s1">&#39;Add-WindowsFeature NET-Framework-45-Core&#39;</span>
+  <span class="n">guard_interpreter</span> <span class="ss">:powershell_script</span>
+  <span class="n">not_if</span> <span class="s2">&quot;(Get-WindowsFeature -Name NET-Framework-45-Core).Installed&quot;</span>
+<span class="k">end</span>
+
+<span class="n">powershell_script</span> <span class="s1">&#39;Install Web-Asp-Net45&#39;</span> <span class="k">do</span>
+  <span class="n">code</span> <span class="s1">&#39;Add-WindowsFeature Web-Asp-Net45&#39;</span>
+  <span class="n">guard_interpreter</span> <span class="ss">:powershell_script</span>
+  <span class="n">not_if</span> <span class="s2">&quot;(Get-WindowsFeature -Name Web-Asp-Net45).Installed&quot;</span>
+<span class="k">end</span>
+
+<span class="n">powershell_script</span> <span class="s1">&#39;Install Web-WebSockets&#39;</span> <span class="k">do</span>
+  <span class="n">code</span> <span class="s1">&#39;Add-WindowsFeature Web-WebSockets&#39;</span>
+  <span class="n">guard_interpreter</span> <span class="ss">:powershell_script</span>
+  <span class="n">not_if</span> <span class="s2">&quot;(Get-WindowsFeature -Name Web-WebSockets).Installed&quot;</span>
+<span class="k">end</span>
+
+<span class="n">powershell_script</span> <span class="s1">&#39;Install NET-WCF-HTTP-Activation45&#39;</span> <span class="k">do</span>
+  <span class="n">code</span> <span class="s1">&#39;Add-WindowsFeature NET-WCF-HTTP-Activation45&#39;</span>
+  <span class="n">guard_interpreter</span> <span class="ss">:powershell_script</span>
+  <span class="n">not_if</span> <span class="s2">&quot;(Get-WindowsFeature -Name NET-WCF-HTTP-Activation45).Installed&quot;</span>
+<span class="k">end</span>
+
+<span class="n">powershell_script</span> <span class="s1">&#39;Install Windows Auth&#39;</span> <span class="k">do</span>
+  <span class="n">code</span> <span class="s1">&#39;Add-WindowsFeature Web-Windows-Auth&#39;</span>
+  <span class="n">guard_interpreter</span> <span class="ss">:powershell_script</span>
+  <span class="n">not_if</span> <span class="s2">&quot;(Get-WindowsFeature -Name Web-Windows-Auth).Installed&quot;</span>
+<span class="k">end</span>
+
+<span class="n">powershell_script</span> <span class="s1">&#39;Install IIS Mgmt Console&#39;</span> <span class="k">do</span>
+  <span class="n">code</span> <span class="s1">&#39;Add-WindowsFeature Web-Mgmt-Console&#39;</span>
+  <span class="n">guard_interpreter</span> <span class="ss">:powershell_script</span>
+  <span class="n">not_if</span> <span class="s2">&quot;(Get-WindowsFeature -Name Web-Mgmt-Console).Installed&quot;</span>
+<span class="k">end</span>
+
+<span class="n">powershell_script</span> <span class="s1">&#39;Install IIS Mgmt Service&#39;</span> <span class="k">do</span>
+  <span class="n">code</span> <span class="s1">&#39;Add-WindowsFeature Web-Mgmt-Service&#39;</span>
+  <span class="n">guard_interpreter</span> <span class="ss">:powershell_script</span>
+  <span class="n">not_if</span> <span class="s2">&quot;(Get-WindowsFeature -Name  Web-Mgmt-Service).Installed&quot;</span>
+<span class="k">end</span>
+
+<span class="n">service</span> <span class="s1">&#39;w3svc&#39;</span> <span class="k">do</span>
+    <span class="n">action</span> <span class="o">[</span><span class="ss">:enable</span><span class="p">,</span> <span class="ss">:start</span><span class="o">]</span>
+<span class="k">end</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 </div>
 
@@ -231,10 +307,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="controllers.html" class="btn btn-neutral float-right" title="Controllers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="releasehistory.html" class="btn btn-neutral float-right" title="Release History" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="artefact.html" class="btn btn-neutral" title="Generate SQL Script" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="poco.html" class="btn btn-neutral" title="Plain old class objects" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

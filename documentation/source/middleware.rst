@@ -1,6 +1,8 @@
 Middleware
 ==========
 
+The following sections talk you through the reason why we have done what have done in the way we have done it.
+
 Why?
 ----
 
@@ -9,12 +11,12 @@ The Coach product has a dependency on recorder data.  To get this data into Coac
 What problem does this solve?
 -----------------------------
 
-Remove your reliance on Qualtrak to bring changes to your api into production.  Facilitates a robust approach to supporting mulitple deployments through use of Inversion of Control ``IoC``.
+Remove your reliance on Qualtrak to bring changes to your api into production.  Facilitates a robust approach to supporting multiple deployments through use of Inversion of Control ``IoC``.
 
 How does it solve it?
 ---------------------
 
-To help decouple the Coach product from the recorder by the implementation of RESTful service and Inversion of Control.
+Helps decouple the Coach product from a recorder by the use of RESTful api service in conjuntion with Inversion of Control.
 
 IoC Container
 ~~~~~~~~~~~~~

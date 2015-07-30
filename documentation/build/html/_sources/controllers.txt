@@ -128,6 +128,9 @@ Dependency on:
 
 	POCO that holds Recording information.
     
+.. function:: DataContractRecordingListFilter
+
+    POCO used to wrap the information required to return a subset of recordings from the recorder        
 
    
 ==========    
@@ -167,7 +170,8 @@ To be used to check that the connector is present. *Used predominatley by the Te
     POST api/score
     
 .. code-block:: c#
-   :linenos:             
+   :linenos:           
+   :emphasize-lines: 4,5,6  
            
     public void Post(DataConnectorEvaluationScore evaluationScore)
     {

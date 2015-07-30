@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>RESTful API &mdash; dataconnectorapi 0.0.1 documentation</title>
+  <title>Generate SQL Script &mdash; dataconnectorapi 0.0.1 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
-        <link rel="next" title="Controllers" href="controllers.html"/>
-        <link rel="prev" title="Generate SQL Script" href="artefact.html"/> 
+        <link rel="next" title="RESTful API" href="restfulapi.html"/>
+        <link rel="prev" title="Create your Connector" href="build.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -99,13 +99,13 @@
 <li class="toctree-l2"><a class="reference internal" href="build.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">RESTful API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#restful-implemetation">RESTful implemetation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#target-different-deployments">Target different deployments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#controllers">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#handlers">Handlers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Generate SQL Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="restfulapi.html">RESTful API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#restful-implemetation">RESTful implemetation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
@@ -169,11 +169,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>RESTful API</li>
+    <li>Generate SQL Script</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/restfulapi.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/artefact.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -182,47 +182,9 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="restful-api">
-<h1>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="restful-implemetation">
-<h2>RESTful implemetation<a class="headerlink" href="#restful-implemetation" title="Permalink to this headline">¶</a></h2>
-<p>This illustration shows the relationship between the api and the deployment process of the Coach product:</p>
-<img alt="alternate text" class="align-center" src="_images/coachintegrationdiagram.png" />
-<p>In the above illustration you see the <code class="docutils literal"><span class="pre">Coach</span></code> product.  <code class="docutils literal"><span class="pre">Coach</span></code> calls on end points [e.g. users] to either pull or push data.</p>
-<p>These end points in turn will call out to a recorder via a <code class="docutils literal"><span class="pre">Connector</span></code> implementation.  The <code class="docutils literal"><span class="pre">Connector</span></code> implementation will be code that you specifically write to talk to your recorder.  In this <code class="docutils literal"><span class="pre">Connector</span></code> you will (a) reference your own api and (b) interpret that data [e.g. search criteria] that is being passed from the RESTful end point.</p>
-<p>The last [far right] part of this illustration explains how you test your implementation and what part this plays during the installation.</p>
-</div>
-<div class="section" id="plug-your-own-or-other-3rd-party-api-s-into-middleware">
-<h2>Plug your own (or other 3rd party) api&#8217;s into middleware<a class="headerlink" href="#plug-your-own-or-other-3rd-party-api-s-into-middleware" title="Permalink to this headline">¶</a></h2>
-<p>The RESTful api is the container that you use to hook into a <code class="docutils literal"><span class="pre">connector</span></code>.  The <code class="docutils literal"><span class="pre">connector</span></code> has the bare minimum to manage the communication with the RESTful api.  However, if the <code class="docutils literal"><span class="pre">connector</span></code> requires a new method then this is completely in your control.  You have the freedom to modify the caller [RESTful api code base] as well as the callee [connector].</p>
-</div>
-<div class="section" id="target-different-deployments">
-<h2>Target different deployments<a class="headerlink" href="#target-different-deployments" title="Permalink to this headline">¶</a></h2>
-<p>This robust RESTful api approach not only offers you a way to quickly code transactions with your api but the other benefit is removes the complexity of using minor permutations of your api with different end-clients through the use of IoC.</p>
-</div>
-<div class="section" id="controllers">
-<h2>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h2>
-<p>What follows is a short description of each of the RESTful API end points:</p>
-<dl class="docutils">
-<dt>Users</dt>
-<dd>A user from the Recorder</dd>
-<dt>Recordings</dt>
-<dd>Either a list of recordings or the url of a single recording</dd>
-<dt>Score</dt>
-<dd>Pass evaluated recording scores back to your recorder system</dd>
-<dt>Connectors</dt>
-<dd>Used to test connectivity</dd>
-<dt>Stream</dt>
-<dd>A proxy to download the recording to a media player</dd>
-</dl>
-</div>
-<div class="section" id="handlers">
-<h2>Handlers<a class="headerlink" href="#handlers" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>BasicAuthenticationGetMediaHandler</dt>
-<dd>A proxy to download the recording when needing to satisfy a Basic Authentication challenge</dd>
-</dl>
-</div>
+  <div class="section" id="generate-sql-script">
+<h1>Generate SQL Script<a class="headerlink" href="#generate-sql-script" title="Permalink to this headline">¶</a></h1>
+<p>The deployment of Coach requires a single MS T-SQL script file.  This file is automatically generated by the Test Suite after both the Agents and Recordings service calls return data.</p>
 </div>
 
 
@@ -231,10 +193,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="controllers.html" class="btn btn-neutral float-right" title="Controllers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="restfulapi.html" class="btn btn-neutral float-right" title="RESTful API" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="artefact.html" class="btn btn-neutral" title="Generate SQL Script" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="build.html" class="btn btn-neutral" title="Create your Connector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

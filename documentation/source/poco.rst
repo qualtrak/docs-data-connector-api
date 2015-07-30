@@ -42,7 +42,6 @@ RecorderUserInfo
 
         [DataMember]
         public String Mail { get; set; }
-
     }
 
 
@@ -56,7 +55,6 @@ RecordingInfo
     [DataContract]
     public class RecordingInfo
     {
-
         /// <summary>
         /// Uniquely identifies the call from the client so we can ascertain (1) the schedule used for call and (2) the precise agent this is meant for
         /// </summary>
@@ -154,4 +152,44 @@ This POCO is used to wrap the evaluation score information that is destined for 
 
         [DataMember]
         public string RecordingId { get; set; }
+    }    
+    
+
+
+=============
+DataContractRecordingListFilter
+=============
+
+This POCO is used to wrap the information required to return a subset of recordings from the recorder
+
+.. code-block:: c#
+   :linenos:       
+    
+    [DataContract]
+    [Serializable]
+    public class DataContractRecordingListFilter : IDataContractRecordingListFilter
+    {
+        [DataMember]
+        public string Key { get; set; }
+
+        [DataMember]
+        public int Limit { get; set; }
+
+        [DataMember]
+        public string TenantCode { get; set; }
+
+        [DataMember]
+        public string UserId { get; set; }
+
+        [DataMember]
+        public List<SearchCriteria> SearchCriteria { get; set; }
+
+        [DataMember]
+        public string TimeZone { get; set; }
+
+        [DataMember]
+        public string Username { get; set; }
+
+        [DataMember]
+        public string Password { get; set; }
     }    
