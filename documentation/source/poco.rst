@@ -3,6 +3,9 @@ Plain old class objects
 
 These are the classes the the RESTful implementation depends on.  These class can be used to pass information to the RESTful api or used to wrap data being returned from the RESTful api.
     
+    
+.. _RecorderUserInfo-label:
+    
 ================    
 RecorderUserInfo
 ================
@@ -45,6 +48,8 @@ RecorderUserInfo
     }
 
 
+.. _RecordingInfo-label:
+
 =============
 RecordingInfo
 =============
@@ -82,6 +87,8 @@ RecordingInfo
         public string Metadata { get; set; }
     }
     
+
+.. _SearchCriteria-label:
 
 =============
 SearchCriteria

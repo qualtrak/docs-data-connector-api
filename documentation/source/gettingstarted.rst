@@ -10,6 +10,7 @@ Here you will be shown how to download and confirm that the middleware is instal
 
    installapi
    build
+   test
    artefact
 
 

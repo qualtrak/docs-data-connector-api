@@ -76,30 +76,45 @@
 <li class="toctree-l1 current"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="">Install API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#download-restful-api-middleware">Download RESTful api middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prepate-the-solution">Prepate the solution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#confirm-middleware-deployment-works">Confirm middleware deployment works</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="build.html">Create your Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build.html#build-search-criteria-via">Build search criteria via</a></li>
 <li class="toctree-l3"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#test-your-connector">Test your connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#how-to-interpret-method-parameters">How to interpret method parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getusers">GetUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordings">GetRecordings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordingsforusers">GetRecordingsForUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordingurl">GetRecordingUrl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#postevaluationscore">PostEvaluationScore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getstream">GetStream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#handlers">Handlers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="build.html#processrequest">ProcessRequest</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test.html#build-search-criteria">Build search criteria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html#test-users">Test Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html#test-recordings">Test Recordings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="middleware.html">Middleware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#why">Why?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#how-does-it-solve-it">How does it solve it?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#ioc-container">IoC Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#restful-api">RESTful API</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html">RESTful implemetation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="middleware.html#why">Why?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
@@ -195,11 +210,47 @@
             
   <div class="section" id="install-api">
 <h1>Install API<a class="headerlink" href="#install-api" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You will need Visual Studio 2013 and PostMan</p>
+</div>
 <div class="section" id="download-restful-api-middleware">
 <h2>Download RESTful api middleware<a class="headerlink" href="#download-restful-api-middleware" title="Permalink to this headline">¶</a></h2>
+<p>You can clone the git repository by:</p>
+<div class="highlight-xml"><div class="highlight"><pre>git clone git@github.com:qualtrak/data-connector-api.git
+</pre></div>
+</div>
+<p>Next, please clone our same recorder connector. This connector is what we use for QAing:</p>
+<div class="highlight-xml"><div class="highlight"><pre>git clone git@github.com:qualtrak/recorder-qa.git
+</pre></div>
+</div>
+<p>Next, create a Visual Studio solution and add these 2 projects. Your solution will look similar to this:</p>
+<img alt="alternate text" class="align-center" src="_images/new-solution.png" />
+</div>
+<div class="section" id="prepate-the-solution">
+<h2>Prepate the solution<a class="headerlink" href="#prepate-the-solution" title="Permalink to this headline">¶</a></h2>
+<p>Select the solution name in the <code class="docutils literal"><span class="pre">Solution</span> <span class="pre">Explorer</span></code>, right-click and <code class="docutils literal"><span class="pre">enable</span> <span class="pre">Nuget</span></code></p>
+<p>Next, open up the Package Manage Console and enter in:</p>
+<div class="highlight-xml"><div class="highlight"><pre>Update-Package -Reinstall -ProjectName DataConnector
+</pre></div>
+</div>
+<p>Now build the solution.</p>
+<p>Next, navigate to the <strong>recorder-qa\bin\Debug</strong> folder and copy the <code class="docutils literal"><span class="pre">QATestRecorder.dll</span></code> binary then paste it into <strong>data-connector-api\bin</strong> folder.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">When you develop your own recorder you must update the mappings in the ninject.xml file.  More on this later.</p>
+</div>
+<p>We don&#8217;t have to change the ninject.xml file now as the default contains the mappings to this QATestRecorder assembly.</p>
+<p>Finally, rebuild the solution.  You are now ready to run and serve up the DataConnector RESTful api.</p>
 </div>
 <div class="section" id="confirm-middleware-deployment-works">
 <h2>Confirm middleware deployment works<a class="headerlink" href="#confirm-middleware-deployment-works" title="Permalink to this headline">¶</a></h2>
+<p>Expand the Controllers folder in DataConnector project and open the ConnectorsController class.  Place a brakepoint on the Get method.</p>
+<p>Select the DataConnect project, right-click and <code class="docutils literal"><span class="pre">Set</span> <span class="pre">as</span> <span class="pre">StartUp</span> <span class="pre">Project</span></code>. Now run the solution</p>
+<p>Copy the address, in my example it is <code class="docutils literal"><span class="pre">http://localhost:20908/</span></code>, into PostMan and press <code class="docutils literal"><span class="pre">Send</span></code>:</p>
+<img alt="alternate text" class="align-center" src="_images/postman-get-connector.png" />
+<p>You&#8217;ll see the brakepoint hit:</p>
+<img alt="alternate text" class="align-center" src="_images/connector-controller-brakepoint-hit.PNG" />
 </div>
 </div>
 

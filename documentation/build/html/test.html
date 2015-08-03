@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to Data Connector Api’s documentation! &mdash; dataconnectorapi 0.0.1 documentation</title>
+  <title>Test your Connector &mdash; dataconnectorapi 0.0.1 documentation</title>
   
 
   
@@ -30,8 +30,10 @@
   
 
   
-    <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="#"/>
-        <link rel="next" title="Getting Started" href="gettingstarted.html"/> 
+    <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
+        <link rel="up" title="Getting Started" href="gettingstarted.html"/>
+        <link rel="next" title="Generate SQL Script" href="artefact.html"/>
+        <link rel="prev" title="Create your Connector" href="build.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -48,7 +50,7 @@
         
 
         
-          <a href="#" class="icon icon-home"> dataconnectorapi
+          <a href="index.html" class="icon icon-home"> dataconnectorapi
         
 
         
@@ -70,8 +72,8 @@
         
           
           
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="installapi.html">Install API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#download-restful-api-middleware">Download RESTful api middleware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#prepate-the-solution">Prepate the solution</a></li>
@@ -79,22 +81,27 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="build.html">Create your Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build.html#how-to-create-a-connector">How to create a connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="build.html#how-to-interpret-method-parameters">How to interpret method parameters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api-getusers.html">GetUsers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api-getrecordingsforusers.html">GetRecordingsForUsers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api-getrecordingurl.html">GetRecordingUrl</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api-getstream.html">GetStream</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api-postevaluationscore.html">PostEvaluationScore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getusers">GetUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordings">GetRecordings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordingsforusers">GetRecordingsForUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordingurl">GetRecordingUrl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#postevaluationscore">PostEvaluationScore</a></li>
+<li class="toctree-l4"><a class="reference internal" href="build.html#getstream">GetStream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#handlers">Handlers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="build.html#processrequest">ProcessRequest</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="test.html#build-search-criteria">Build search criteria</a></li>
-<li class="toctree-l3"><a class="reference internal" href="test.html#test-users">Test Users</a></li>
-<li class="toctree-l3"><a class="reference internal" href="test.html#test-recordings">Test Recordings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="test.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#build-search-criteria">Build search criteria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-users">Test Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#test-recordings">Test Recordings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
@@ -175,7 +182,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">dataconnectorapi</a>
+        <a href="index.html">dataconnectorapi</a>
       </nav>
 
 
@@ -184,13 +191,15 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
+    <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Welcome to Data Connector Api&#8217;s documentation!</li>
+          <li><a href="gettingstarted.html">Getting Started</a> &raquo;</li>
+      
+    <li>Test your Connector</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/test.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,35 +208,29 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="welcome-to-data-connector-api-s-documentation">
-<h1>Welcome to Data Connector Api&#8217;s documentation!<a class="headerlink" href="#welcome-to-data-connector-api-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The is a RESTful implementation. Code is written in c#</p>
+  <div class="section" id="test-your-connector">
+<h1>Test your Connector<a class="headerlink" href="#test-your-connector" title="Permalink to this headline">¶</a></h1>
+<p>Here, we will walk you though how to test your connector from our <strong>Integratio Tool</strong> <a class="footnote-reference" href="#f1" id="id1">[1]</a> .  You will need to host this end point.  You can do this though IIS and allowing port 80 through your firewall.  You IP address or domain name will be required by our <strong>Integration Tool</strong>.</p>
+<div class="section" id="build-search-criteria">
+<h2>Build search criteria<a class="headerlink" href="#build-search-criteria" title="Permalink to this headline">¶</a></h2>
+<p>You can use our <strong>Integration Tool</strong> to construct your recorder&#8217;s search criteria.</p>
 </div>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="poco.html">Plain old class objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server Deployment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qualtrak.html">Qualtrak</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-</ul>
+<div class="section" id="test-users">
+<h2>Test Users<a class="headerlink" href="#test-users" title="Permalink to this headline">¶</a></h2>
 </div>
-<p>The Getting started section <a class="reference internal" href="gettingstarted.html"><em>Getting Started</em></a>  is the best place to start if you are a developer tasked with the job of integrating your recorder with Coach.</p>
-<p>In this <code class="docutils literal"><span class="pre">Getting</span> <span class="pre">Started</span></code> section you will be guided through how to:</p>
-<ul class="simple">
-<li>get the RESTFul api middleware</li>
-<li>how to confirm middleware deployment is correct</li>
-<li>how to build search criteria via our Test Suite</li>
-<li>how to create your connector</li>
-<li>how to test your search criteria against your middleware</li>
-<li>how to generate an artefact required during the installation of Coach</li>
-</ul>
+<div class="section" id="test-recordings">
+<h2>Test Recordings<a class="headerlink" href="#test-recordings" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="generate-an-sql-script-required-during-the-installation-of-coach">
+<h2>Generate an SQL script required during the installation of Coach<a class="headerlink" href="#generate-an-sql-script-required-during-the-installation-of-coach" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://dev.qualtrak.com/Cit">http://dev.qualtrak.com/Cit</a> - developer portal</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 
 
@@ -236,8 +239,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gettingstarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="artefact.html" class="btn btn-neutral float-right" title="Generate SQL Script" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="build.html" class="btn btn-neutral" title="Create your Connector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

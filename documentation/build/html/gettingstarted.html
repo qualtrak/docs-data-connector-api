@@ -75,30 +75,40 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installapi.html">Install API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#download-restful-api-middleware">Download RESTful api middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installapi.html#prepate-the-solution">Prepate the solution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#confirm-middleware-deployment-works">Confirm middleware deployment works</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="build.html">Create your Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build.html#build-search-criteria-via">Build search criteria via</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#test-your-connector">Test your connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#how-to-create-a-connector">How to create a connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#how-to-interpret-method-parameters">How to interpret method parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api-getusers.html">GetUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getrecordingsforusers.html">GetRecordingsForUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getrecordingurl.html">GetRecordingUrl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getstream.html">GetStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-postevaluationscore.html">PostEvaluationScore</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test.html#build-search-criteria">Build search criteria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html#test-users">Test Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html#test-recordings">Test Recordings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="middleware.html">Middleware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#why">Why?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#how-does-it-solve-it">How does it solve it?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#ioc-container">IoC Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#restful-api">RESTful API</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html">RESTful implemetation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="middleware.html#why">Why?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
@@ -199,7 +209,15 @@
 <li class="toctree-l1"><a class="reference internal" href="installapi.html">Install API</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="build.html">Create your Connector</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="build.html">Create your Connector</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api-getusers.html">GetUsers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-getrecordingsforusers.html">GetRecordingsForUsers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-getrecordingurl.html">GetRecordingUrl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-getstream.html">GetStream</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api-postevaluationscore.html">PostEvaluationScore</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">Test your Connector</a><ul class="simple">
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>

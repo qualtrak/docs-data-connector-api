@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Welcome to Data Connector Api’s documentation! &mdash; dataconnectorapi 0.0.1 documentation</title>
+  <title>GetRecordingsForUsers &mdash; dataconnectorapi 0.0.1 documentation</title>
   
 
   
@@ -30,8 +30,10 @@
   
 
   
-    <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="#"/>
-        <link rel="next" title="Getting Started" href="gettingstarted.html"/> 
+    <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
+        <link rel="up" title="Create your Connector" href="build.html"/>
+        <link rel="next" title="GetRecordingUrl" href="api-getrecordingurl.html"/>
+        <link rel="prev" title="GetUsers" href="api-getusers.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -48,7 +50,7 @@
         
 
         
-          <a href="#" class="icon icon-home"> dataconnectorapi
+          <a href="index.html" class="icon icon-home"> dataconnectorapi
         
 
         
@@ -70,22 +72,22 @@
         
           
           
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="installapi.html">Install API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#download-restful-api-middleware">Download RESTful api middleware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#prepate-the-solution">Prepate the solution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#confirm-middleware-deployment-works">Confirm middleware deployment works</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="build.html">Create your Connector</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="build.html">Create your Connector</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="build.html#how-to-create-a-connector">How to create a connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#how-to-interpret-method-parameters">How to interpret method parameters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="api-getusers.html">GetUsers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api-getrecordingsforusers.html">GetRecordingsForUsers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api-getrecordingurl.html">GetRecordingUrl</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api-getstream.html">GetStream</a></li>
-<li class="toctree-l4"><a class="reference internal" href="api-postevaluationscore.html">PostEvaluationScore</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="build.html#how-to-interpret-method-parameters">How to interpret method parameters</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="build.html#getstream">GetStream</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#handlers">Handlers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="build.html#processrequest">ProcessRequest</a></li>
 </ul>
 </li>
 </ul>
@@ -175,7 +177,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#">dataconnectorapi</a>
+        <a href="index.html">dataconnectorapi</a>
       </nav>
 
 
@@ -184,13 +186,17 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="#">Docs</a> &raquo;</li>
+    <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li>Welcome to Data Connector Api&#8217;s documentation!</li>
+          <li><a href="gettingstarted.html">Getting Started</a> &raquo;</li>
+      
+          <li><a href="build.html">Create your Connector</a> &raquo;</li>
+      
+    <li>GetRecordingsForUsers</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/api-getrecordingsforusers.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -199,35 +205,30 @@
 </div>
           <div role="main" class="document">
             
-  <div class="section" id="welcome-to-data-connector-api-s-documentation">
-<h1>Welcome to Data Connector Api&#8217;s documentation!<a class="headerlink" href="#welcome-to-data-connector-api-s-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The is a RESTful implementation. Code is written in c#</p>
-</div>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="poco.html">Plain old class objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="server.html">Server Deployment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasehistory.html">Release History</a></li>
-<li class="toctree-l1"><a class="reference internal" href="qualtrak.html">Qualtrak</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-</ul>
-</div>
-<p>The Getting started section <a class="reference internal" href="gettingstarted.html"><em>Getting Started</em></a>  is the best place to start if you are a developer tasked with the job of integrating your recorder with Coach.</p>
-<p>In this <code class="docutils literal"><span class="pre">Getting</span> <span class="pre">Started</span></code> section you will be guided through how to:</p>
-<ul class="simple">
-<li>get the RESTFul api middleware</li>
-<li>how to confirm middleware deployment is correct</li>
-<li>how to build search criteria via our Test Suite</li>
-<li>how to create your connector</li>
-<li>how to test your search criteria against your middleware</li>
-<li>how to generate an artefact required during the installation of Coach</li>
-</ul>
+  <div class="section" id="getrecordingsforusers">
+<h1>GetRecordingsForUsers<a class="headerlink" href="#getrecordingsforusers" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre>     <span class="k">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">RecordingInfo</span><span class="p">&gt;</span> <span class="n">GetRecordingsForUsers</span><span class="p">(</span><span class="kt">int</span> <span class="n">limit</span><span class="p">,</span> <span class="kt">string</span> <span class="n">tenantCode</span><span class="p">,</span>
+             <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">userIds</span><span class="p">,</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">SearchCriteria</span><span class="p">&gt;</span> <span class="n">searchCriteria</span><span class="p">,</span> <span class="kt">string</span> <span class="n">username</span><span class="p">,</span>
+             <span class="kt">string</span> <span class="n">password</span><span class="p">)</span>
+</pre></div>
+</td></tr></table></div>
+<dl class="docutils">
+<dt>limit</dt>
+<dd>This is the maximum recordings per agent to return. For instance, if this value is 10 and there are 50 recordings found for this agent, 40 recordings must not be returned.</dd>
+<dt>tenantCode</dt>
+<dd>The is a unique identifier as used by Coach. An example is <code class="docutils literal"><span class="pre">1000</span></code>.</dd>
+<dt>userIds</dt>
+<dd>A <strong>List</strong> of unique identifiers originating from the recorder to get recordings for.</dd>
+<dt><a class="reference internal" href="poco.html#searchcriteria-label"><span>SearchCriteria</span></a></dt>
+<dd>A <strong>List</strong> fo search crtieria to filter to recordings on.</dd>
+<dt>username</dt>
+<dd>This is the username of the user who is currently signed into Coach.</dd>
+<dt>password</dt>
+<dd>This is the clear text password of the user who is currently signed into Coach.</dd>
+</dl>
+<p>Please return a <strong>List</strong> of <a class="reference internal" href="poco.html#recordinginfo-label"><span>RecordingInfo</span></a> objects.</p>
 </div>
 
 
@@ -236,8 +237,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gettingstarted.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="api-getrecordingurl.html" class="btn btn-neutral float-right" title="GetRecordingUrl" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
+      
+        <a href="api-getusers.html" class="btn btn-neutral" title="GetUsers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

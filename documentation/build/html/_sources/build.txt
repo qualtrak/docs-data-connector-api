@@ -4,17 +4,35 @@ Create your Connector
 Here you will be shown how to build and test your ``connector``.
 
 =========================
-Build search criteria via
+How to create a connector
 =========================
 
-=====================
-Create your connector
-=====================
+Add a new project to your Visual Studio solution.  For ease, reuse the QATestRecorder code but remove all the code in the methods and leaving the method signatures in play. 
 
-===================
-Test your connector
-===================
+I have created a new connector and called the project ``recorder-abc`` with the namespace of ``ABCRecorder``:
 
-================================================================
-Generate an SQL script required during the installation of Coach
-================================================================
+.. image:: /images/my-recorder.png      
+   :alt: alternate text
+   :align: center
+   
+==================================
+How to interpret method parameters
+==================================
+
+.. important::
+
+	When a Schedule is being processed the username and password parameters are those that have been configured for your recorder. When a search is run from the Evaluation Form, the username and password are those of the user that is currently logged in.
+
+
+
+Connector api end points:
+
+.. toctree::
+   :titlesonly:
+
+   api-getusers
+   api-getrecordingsforusers
+   api-getrecordingurl
+   api-getstream   
+   api-postevaluationscore
+   
