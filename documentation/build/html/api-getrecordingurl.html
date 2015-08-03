@@ -32,7 +32,7 @@
   
     <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
         <link rel="up" title="Create your Connector" href="build.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="api-getstream.html"/>
+        <link rel="next" title="GetStream" href="api-getstream.html"/>
         <link rel="prev" title="GetRecordingsForUsers" href="api-getrecordingsforusers.html"/> 
 
   
@@ -83,11 +83,11 @@
 <li class="toctree-l2 current"><a class="reference internal" href="build.html">Create your Connector</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="build.html#how-to-create-a-connector">How to create a connector</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="build.html#how-to-interpret-method-parameters">How to interpret method parameters</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="build.html#getstream">GetStream</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#handlers">Handlers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="build.html#processrequest">ProcessRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getusers.html">GetUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getrecordingsforusers.html">GetRecordingsForUsers</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">GetRecordingUrl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getstream.html">GetStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-postevaluationscore.html">PostEvaluationScore</a></li>
 </ul>
 </li>
 </ul>
@@ -207,6 +207,7 @@
             
   <div class="section" id="getrecordingurl">
 <h1>GetRecordingUrl<a class="headerlink" href="#getrecordingurl" title="Permalink to this headline">¶</a></h1>
+<p>This method will return a url that will be loaded into the media player. The url may need to undergo further amendments before it can get the recording and this is where you can programmatically perform such an operation.</p>
 <div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="highlight"><pre>     <span class="k">public</span> <span class="kt">string</span> <span class="nf">GetRecordingUrl</span><span class="p">(</span><span class="kt">string</span> <span class="n">recordingId</span><span class="p">,</span> <span class="kt">string</span> <span class="n">recordingOriginalUrl</span><span class="p">,</span>
              <span class="kt">string</span> <span class="n">username</span><span class="p">,</span> <span class="kt">string</span> <span class="n">password</span><span class="p">)</span>
@@ -231,7 +232,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="api-getstream.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="api-getstream.html" class="btn btn-neutral float-right" title="GetStream" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="api-getrecordingsforusers.html" class="btn btn-neutral" title="GetRecordingsForUsers" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

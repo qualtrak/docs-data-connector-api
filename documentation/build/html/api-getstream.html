@@ -90,10 +90,6 @@
 <li class="toctree-l4"><a class="reference internal" href="api-postevaluationscore.html">PostEvaluationScore</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#handlers">Handlers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="build.html#processrequest">ProcessRequest</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
@@ -211,6 +207,7 @@
             
   <div class="section" id="getstream">
 <h1>GetStream<a class="headerlink" href="#getstream" title="Permalink to this headline">¶</a></h1>
+<p>If you require some form of proxy intervention when getting a recording then this is programmatically the place to perform such an operations</p>
 <div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre>     <span class="k">public</span> <span class="n">Stream</span> <span class="nf">GetStream</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
 </pre></div>
 </td></tr></table></div>
@@ -219,6 +216,17 @@
 <dd>This is the url that will generate a stream and can be used as part of the url if you need to do something particular with the returned recording.</dd>
 </dl>
 <p>Please return a <strong>Stream</strong></p>
+<div class="section" id="how-can-i-use-it">
+<h2>How can I use it?<a class="headerlink" href="#how-can-i-use-it" title="Permalink to this headline">¶</a></h2>
+<div class="compound">
+<p class="compound-first">An example of how you can use this api is here. You enter this</p>
+<div class="compound-middle highlight-python"><div class="highlight"><pre>/data-connector/api/stream?url=
+</pre></div>
+</div>
+<p class="compound-last">into the <code class="docutils literal"><span class="pre">Recordings</span> <span class="pre">root</span> <span class="pre">folder</span></code> input field when configuring a media player from within the <strong>Console</strong>.  This will ensure that every url is presuffix with this value first resulting the stream being loaded into the media player.</p>
+</div>
+<p>If your recordings need to satify a Basic Authentication challenge then please see our <a class="reference internal" href="handler-basicauth.html#basicauthhandler-label"><span>BasicAuthenticationGetMedia Handler</span></a> instead</p>
+</div>
 </div>
 
 

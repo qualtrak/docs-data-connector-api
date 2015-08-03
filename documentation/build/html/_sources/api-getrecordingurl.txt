@@ -1,6 +1,8 @@
 GetRecordingUrl
 ===============
 
+This method will return a url that will be loaded into the media player. The url may need to undergo further amendments before it can get the recording and this is where you can programmatically perform such an operation. 
+
 .. code-block:: c#
    :linenos:
    

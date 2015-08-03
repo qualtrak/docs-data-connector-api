@@ -25,7 +25,7 @@ How to interpret method parameters
 
 
 
-Connector api end points:
+Connector methods:
 
 .. toctree::
    :titlesonly:
@@ -36,3 +36,10 @@ Connector api end points:
    api-getstream   
    api-postevaluationscore
    
+   
+ 
+.. important::
+
+	When you have built your recorder, copy its binary and any other binary that is required into the **data-connector-api\\bin** folder before you host the DataConnector
+
+  

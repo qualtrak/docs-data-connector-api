@@ -1,6 +1,8 @@
 PostEvaluationScore
 ===================
 
+This method provides the mechanism to update your own data repository with scored assigned to an evaluation.
+
 .. code-block:: c#
    :linenos:
    

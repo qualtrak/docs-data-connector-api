@@ -1,6 +1,8 @@
 GetUsers
 ========
 
+This method is to return a list of Users. 
+
 .. code-block:: c#
    :linenos:
 	
