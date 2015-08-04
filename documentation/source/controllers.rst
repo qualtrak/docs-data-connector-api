@@ -20,30 +20,16 @@ To return a list of users from the rcorder connector.
         
 .. code-block:: c#
    :linenos:
-   :emphasize-lines: 13,13    
+   :emphasize-lines: 8,8  
 	
     public IEnumerable<RecorderUserInfo> Get(string tenantCode, string username, string password)
     {
         var list = new List<RecorderUserInfo>();
-
-        Trace.TraceInformation("connector : username: [{0}]", User);
-
         var client = NinjectWebCommon.Kernel.Get<IApiFacade>();
-
-        Trace.TraceInformation("connector : connecting to api client");
 
         try
         {
             list = client.GetUsers(tenantCode, username, password);
-            if (list != null)
-            {
-                Trace.TraceInformation("connector : users found [{0}]", list.Count);
-            }
-            else
-            {
-                Trace.TraceInformation("connector : no users found ");    
-            }
-            
         }
         catch (Exception ex)
         {

@@ -32,8 +32,8 @@
   
     <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
         <link rel="up" title="Getting Started" href="gettingstarted.html"/>
-        <link rel="next" title="Middleware" href="middleware.html"/>
-        <link rel="prev" title="Create your Connector" href="build.html"/> 
+        <link rel="next" title="Conceptual Overview" href="concept.html"/>
+        <link rel="prev" title="Test your Connector" href="test.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -76,30 +76,42 @@
 <li class="toctree-l1 current"><a class="reference internal" href="gettingstarted.html">Getting Started</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="installapi.html">Install API</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#download-restful-api-middleware">Download RESTful api middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installapi.html#prepate-the-solution">Prepate the solution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="installapi.html#confirm-middleware-deployment-works">Confirm middleware deployment works</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="build.html">Create your Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build.html#build-search-criteria-via">Build search criteria via</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#test-your-connector">Test your connector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#how-to-create-a-connector">How to create a connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#how-to-interpret-method-parameters">How to interpret method parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="api-getusers.html">GetUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getrecordingsforusers.html">GetRecordingsForUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getrecordingurl.html">GetRecordingUrl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getstream.html">GetStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-postevaluationscore.html">PostEvaluationScore</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Generate SQL Script</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="middleware.html">Middleware</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#why">Why?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html#how-does-it-solve-it">How does it solve it?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#ioc-container">IoC Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#restful-api">RESTful API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test.html#build-search-criteria">Build search criteria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html#test-users">Test Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="test.html#test-recordings">Test Recordings</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Generate SQL Script</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="restfulapi.html">RESTful implemetation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="middleware.html#why">Why?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
@@ -195,7 +207,18 @@
             
   <div class="section" id="generate-sql-script">
 <h1>Generate SQL Script<a class="headerlink" href="#generate-sql-script" title="Permalink to this headline">¶</a></h1>
-<p>The deployment of Coach requires a single MS T-SQL script file.  This file is automatically generated by the Test Suite after both the Agents and Recordings service calls return data.</p>
+<p>The deployment of Coach requires a single MS T-SQL script file.  This file is automatically generated by the <strong>Integration Tool</strong> after both the Agents and Recordings service calls return data.</p>
+<div class="section" id="generate-an-sql-script-required-during-the-installation-of-coach">
+<h2>Generate an SQL script required during the installation of Coach<a class="headerlink" href="#generate-an-sql-script-required-during-the-installation-of-coach" title="Permalink to this headline">¶</a></h2>
+<p>After you have tested both the Users and Media, you will be prompt to provide your contact details. This process you create you an account on our developer portal and you&#8217;ll be sent an Email with a link to log into this portal.</p>
+<p>The last part of this process is generating the T-SQL that is required during the deployment of the Coach product.  The T-SQL this will be generated will describe to Coach everything that you have entered during this process.  You will have been sent an Email through out this process containing a link that you can use to modify your recorder configuration.</p>
+<p>You will see a <code class="docutils literal"><span class="pre">Generate</span> <span class="pre">Sql</span></code> button at the bottom of the progress bar, situated on the left side of the page.  Please press this.</p>
+<img alt="alternate text" class="align-center" src="_images/generate-sql.png" />
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">You will now receive one final Email. This Email will have an attachment.  This attachment is the T-SQL script you need to place in the Database folder of the installation package.</p>
+</div>
+</div>
 </div>
 
 
@@ -204,10 +227,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="middleware.html" class="btn btn-neutral float-right" title="Middleware" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="concept.html" class="btn btn-neutral float-right" title="Conceptual Overview" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="build.html" class="btn btn-neutral" title="Create your Connector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="test.html" class="btn btn-neutral" title="Test your Connector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -33,7 +33,7 @@
     <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
         <link rel="up" title="Getting Started" href="gettingstarted.html"/>
         <link rel="next" title="Generate SQL Script" href="artefact.html"/>
-        <link rel="prev" title="Create your Connector" href="build.html"/> 
+        <link rel="prev" title="PostEvaluationScore" href="api-postevaluationscore.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -81,18 +81,13 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="build.html">Create your Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="build.html#id1">Create your connector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="build.html#how-to-create-a-connector">How to create a connector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="build.html#how-to-interpret-method-parameters">How to interpret method parameters</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="build.html#getusers">GetUsers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordings">GetRecordings</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordingsforusers">GetRecordingsForUsers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build.html#getrecordingurl">GetRecordingUrl</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build.html#postevaluationscore">PostEvaluationScore</a></li>
-<li class="toctree-l4"><a class="reference internal" href="build.html#getstream">GetStream</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="build.html#handlers">Handlers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="build.html#processrequest">ProcessRequest</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getusers.html">GetUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getrecordingsforusers.html">GetRecordingsForUsers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getrecordingurl.html">GetRecordingUrl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-getstream.html">GetStream</a></li>
+<li class="toctree-l4"><a class="reference internal" href="api-postevaluationscore.html">PostEvaluationScore</a></li>
 </ul>
 </li>
 </ul>
@@ -101,10 +96,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#build-search-criteria">Build search criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-users">Test Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-recordings">Test Recordings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artefact.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul>
@@ -211,18 +208,44 @@
   <div class="section" id="test-your-connector">
 <h1>Test your Connector<a class="headerlink" href="#test-your-connector" title="Permalink to this headline">¶</a></h1>
 <p>Here, we will walk you though how to test your connector from our <strong>Integratio Tool</strong> <a class="footnote-reference" href="#f1" id="id1">[1]</a> .  You will need to host this end point.  You can do this though IIS and allowing port 80 through your firewall.  You IP address or domain name will be required by our <strong>Integration Tool</strong>.</p>
+<img alt="alternate text" class="align-center" src="_images/basic-information.png" />
+<p>Next, you will be asked for the media player you wish to use.</p>
 <div class="section" id="build-search-criteria">
 <h2>Build search criteria<a class="headerlink" href="#build-search-criteria" title="Permalink to this headline">¶</a></h2>
 <p>You can use our <strong>Integration Tool</strong> to construct your recorder&#8217;s search criteria.</p>
+<p>Here, you will see that we have defined the search criteria as having 3 fields; <strong>Date Range</strong>, <strong>Part of campaign</strong> and <strong>Direction of call</strong>.</p>
+<img alt="alternate text" class="align-center" src="_images/search-criteria-defined.png" />
 </div>
 <div class="section" id="test-users">
 <h2>Test Users<a class="headerlink" href="#test-users" title="Permalink to this headline">¶</a></h2>
+<p>Open you connector code and place breakpoint just inside of the <strong>GetUsers</strong> method.</p>
+<p>Whem you press the <code class="docutils literal"><span class="pre">Test</span> <span class="pre">Users</span></code> button you get presented with this modal and you press <code class="kbd docutils literal"><span class="pre">OK</span></code></p>
+<img alt="alternate text" class="align-center" src="_images/test-get-users-pre.png" />
+<p>It now hits your breakpoint. You will see <code class="docutils literal"><span class="pre">1000</span></code> is being passed as the <strong>tenantCode</strong>. You will see <code class="docutils literal"><span class="pre">null</span></code> for both username and password as the Integration Tool is not passing values for those.</p>
+<img alt="alternate text" class="align-center" src="_images/test-get-users.png" />
 </div>
 <div class="section" id="test-recordings">
 <h2>Test Recordings<a class="headerlink" href="#test-recordings" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="generate-an-sql-script-required-during-the-installation-of-coach">
-<h2>Generate an SQL script required during the installation of Coach<a class="headerlink" href="#generate-an-sql-script-required-during-the-installation-of-coach" title="Permalink to this headline">¶</a></h2>
+<p>Open you connector code and place breakpoint just inside of the <strong>GetRecordingsForUsers</strong> method.</p>
+<p>Whem you press the <code class="docutils literal"><span class="pre">Test</span> <span class="pre">Media</span></code> button you get presented with this modal and you press <code class="kbd docutils literal"><span class="pre">OK</span></code></p>
+<img alt="alternate text" class="align-center" src="_images/test-get-recordings-pre.png" />
+<p>It now hits your breakpoint. You first see a limit value. This is the maximum calls that Coach wants per agent. You will see <code class="docutils literal"><span class="pre">1000</span></code> is being passed as the <strong>tenantCode</strong>. Next you see that only 1 <a href="#id2"><span class="problematic" id="id3">**</span></a>userId* is passed.  Following this, you see that 4 search criteria have been passed. You will see `` `` for both username and password as the Integration Tool is not passing values for those.</p>
+<img alt="alternate text" class="align-center" src="_images/test-get-recordings.png" />
+<p>There is only one user passed in</p>
+<img alt="alternate text" class="align-center" src="_images/test-get-recordings-param-users.png" />
+<p>Here we see a 4 criteria listed</p>
+<img alt="alternate text" class="align-center" src="_images/test-get-recordings-param-criteria.png" />
+<p>All criteria is expanded. Each criteria starts with an identifier, e.g. <code class="docutils literal"><span class="pre">date_0</span></code></p>
+<img alt="alternate text" class="align-center" src="_images/test-get-recordings-param-criteria-expanded.png" />
+<p>This is a description of the critiera being passed to your method:</p>
+<dl class="docutils">
+<dt>Date Range</dt>
+<dd>The first 2 criteria here form the date range.  These come with conditions of GreaterthanEqual and LessThanEqual.  As these criteria share the same identifier <code class="docutils literal"><span class="pre">date_0</span></code> this denotes they refer to the same data input.</dd>
+<dt>Part of campaign</dt>
+<dd>The next criteria identifier is <code class="docutils literal"><span class="pre">is_campaign_0</span></code>. Here we see that the condition is Equal and that we are passing a boolean value. In this case, the <strong>Integration Tool</strong> is passing <code class="docutils literal"><span class="pre">True</span></code>.</dd>
+<dt>Direction of call</dt>
+<dd>The last criteria that is passed has the identifier of <code class="docutils literal"><span class="pre">call_direction_0</span></code>. Again, this condition is Equal and the value being passed is <code class="docutils literal"><span class="pre">I</span></code>.</dd>
+</dl>
 <p class="rubric">Footnotes</p>
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -242,7 +265,7 @@
         <a href="artefact.html" class="btn btn-neutral float-right" title="Generate SQL Script" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="build.html" class="btn btn-neutral" title="Create your Connector" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="api-postevaluationscore.html" class="btn btn-neutral" title="PostEvaluationScore" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

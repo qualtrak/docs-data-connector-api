@@ -49,7 +49,6 @@ Handlers
 --------
 
 :ref:`basicauthhandler-label`
-
 	A proxy to download the recording when needing to satisfy a Basic Authentication challenge
 
 
