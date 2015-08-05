@@ -4,5 +4,5 @@ Conceptual Overview
 .. toctree::
    :titlesonly:
 
-   restfulapi
+   whatiscoach   
    middleware   

@@ -23,6 +23,7 @@ Contents:
    releasehistory
    qualtrak
    license
+   appendix
 
 
 The Getting started section :doc:`/gettingstarted`  is the best place to start if you are a developer tasked with the job of integrating your recorder with Coach.

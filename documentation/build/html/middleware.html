@@ -32,8 +32,8 @@
   
     <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
         <link rel="up" title="Conceptual Overview" href="concept.html"/>
-        <link rel="next" title="Controllers" href="controllers.html"/>
-        <link rel="prev" title="RESTful implemetation" href="restfulapi.html"/> 
+        <link rel="next" title="RESTful implemetation" href="restfulapi.html"/>
+        <link rel="prev" title="What is Coach?" href="whatiscoach.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -93,21 +93,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test.html#search-criteria-matrix">Search Criteria Matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#build-search-criteria">Build search criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#test-users">Test Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#test-recordings">Test Recordings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="test.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artefact.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="restfulapi.html">RESTful implemetation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatiscoach.html">What is Coach?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="whatiscoach.html#high-availability">High Availability</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Middleware</a><ul>
@@ -123,6 +123,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#users">Users</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-users">Get list of users</a></li>
 </ul>
@@ -132,12 +136,12 @@
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-recordings">Get list of recordings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#score">Score</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#push-score">Push Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#stream">Stream</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#stream-recording">Stream recording</a></li>
 </ul>
 </li>
 </ul>
@@ -208,15 +212,15 @@
 <p>The following sections talk you through the reason why we have done what have done in the way we have done it.</p>
 <div class="section" id="why">
 <h2>Why?<a class="headerlink" href="#why" title="Permalink to this headline">¶</a></h2>
-<p>The Coach product has a dependency on recorder data.  To get this data into Coach it pulls data from a recorder by SOA.  This process can involve many hours of coding for each recorder and end client.</p>
+<p>The <a class="reference internal" href="whatiscoach.html#whatiscoach-label"><span>Coach</span></a> product has a dependency on user and recording metadata. In order for Coach to obtain this data it reaches out to the Recorder via Service Orientated Architecture <code class="docutils literal"><span class="pre">SOA</span></code>.  The reason for this api documentation is to show and help you work through this process.</p>
 </div>
 <div class="section" id="what-problem-does-this-solve">
 <h2>What problem does this solve?<a class="headerlink" href="#what-problem-does-this-solve" title="Permalink to this headline">¶</a></h2>
-<p>Remove your reliance on Qualtrak to bring changes to your api into production.  Facilitates a robust approach to supporting multiple deployments through use of Inversion of Control <code class="docutils literal"><span class="pre">IoC</span></code>.</p>
+<p>When one computer application requires information from another, we generally create an api to make this possible.  We have chosen to create a RESTful api to act as the intermeditary between our system and yours. This approach enables a decoupling between the two systems, removing your reliance on Qualtrak to bring any changes from your api into production.</p>
 </div>
 <div class="section" id="how-does-it-solve-it">
 <h2>How does it solve it?<a class="headerlink" href="#how-does-it-solve-it" title="Permalink to this headline">¶</a></h2>
-<p>Helps decouple the Coach product from a recorder by the use of RESTful api service in conjuntion with Inversion of Control.</p>
+<p>We manage the decoupling programmatically through the use of the Inversion of Control <code class="docutils literal"><span class="pre">IoC</span></code> pattern.</p>
 <div class="section" id="ioc-container">
 <h3>IoC Container<a class="headerlink" href="#ioc-container" title="Permalink to this headline">¶</a></h3>
 <p>In software engineering, inversion of control (IoC)  <a class="footnote-reference" href="#f1" id="id1">[1]</a>  describes a design in which custom-written portions of a computer program receive the flow of control from a generic, reusable library.  Martin Fowler walks you through an implementation <a class="footnote-reference" href="#f2" id="id2">[2]</a> and compares IoC with DI here <a class="footnote-reference" href="#f3" id="id3">[3]</a>.  Dependency Injection (DI) is another programming pattern.</p>
@@ -224,6 +228,14 @@
 <div class="section" id="restful-api">
 <h3>RESTful API<a class="headerlink" href="#restful-api" title="Permalink to this headline">¶</a></h3>
 <p>In computing, Representational State Transfer (REST) is a software architecture style for building scalable web services <a class="footnote-reference" href="#f4" id="id4">[4]</a> .</p>
+<p>In this section we talk in more detail about our RESTful api that acts as the conduit between the 2 respective systems:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="restfulapi.html">RESTful implemetation</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</div>
 <p class="rubric">Footnotes</p>
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -259,10 +271,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="controllers.html" class="btn btn-neutral float-right" title="Controllers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="restfulapi.html" class="btn btn-neutral float-right" title="RESTful implemetation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="restfulapi.html" class="btn btn-neutral" title="RESTful implemetation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="whatiscoach.html" class="btn btn-neutral" title="What is Coach?" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

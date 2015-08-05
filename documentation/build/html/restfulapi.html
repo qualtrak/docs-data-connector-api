@@ -31,9 +31,9 @@
 
   
     <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
-        <link rel="up" title="Conceptual Overview" href="concept.html"/>
-        <link rel="next" title="Middleware" href="middleware.html"/>
-        <link rel="prev" title="Conceptual Overview" href="concept.html"/> 
+        <link rel="up" title="Middleware" href="middleware.html"/>
+        <link rel="next" title="Controllers" href="controllers.html"/>
+        <link rel="prev" title="Middleware" href="middleware.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -93,29 +93,29 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test.html#search-criteria-matrix">Search Criteria Matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#build-search-criteria">Build search criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#test-users">Test Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#test-recordings">Test Recordings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="test.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artefact.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">RESTful implemetation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#target-different-deployments">Target different deployments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#controllers">Controllers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#handlers">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatiscoach.html">What is Coach?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="whatiscoach.html#high-availability">High Availability</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="middleware.html">Middleware</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="middleware.html#why">Why?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="middleware.html#what-problem-does-this-solve">What problem does this solve?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="middleware.html#how-does-it-solve-it">How does it solve it?</a><ul>
+<li class="toctree-l3 current"><a class="reference internal" href="middleware.html#how-does-it-solve-it">How does it solve it?</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="middleware.html#ioc-container">IoC Container</a></li>
-<li class="toctree-l4"><a class="reference internal" href="middleware.html#restful-api">RESTful API</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="middleware.html#restful-api">RESTful API</a></li>
 </ul>
 </li>
 </ul>
@@ -123,6 +123,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#users">Users</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-users">Get list of users</a></li>
 </ul>
@@ -132,12 +136,12 @@
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-recordings">Get list of recordings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#score">Score</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#push-score">Push Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#stream">Stream</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#stream-recording">Stream recording</a></li>
 </ul>
 </li>
 </ul>
@@ -190,6 +194,8 @@
       
           <li><a href="concept.html">Conceptual Overview</a> &raquo;</li>
       
+          <li><a href="middleware.html">Middleware</a> &raquo;</li>
+      
     <li>RESTful implemetation</li>
       <li class="wy-breadcrumbs-aside">
         
@@ -222,15 +228,15 @@
 <h2>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h2>
 <p>What follows is a short description of each of the RESTful API end points:</p>
 <dl class="docutils">
-<dt>Users</dt>
-<dd>A user from the Recorder</dd>
-<dt>Recordings</dt>
-<dd>Either a list of recordings or the url of a single recording</dd>
-<dt>Score</dt>
-<dd>Pass evaluated recording scores back to your recorder system</dd>
-<dt>Connectors</dt>
+<dt><a class="reference internal" href="controllers.html#controller-connector-label"><span>Connectors</span></a></dt>
 <dd>Used to test connectivity</dd>
-<dt>Stream</dt>
+<dt><a class="reference internal" href="controllers.html#controller-users-label"><span>Users</span></a></dt>
+<dd>A user from the Recorder</dd>
+<dt><a class="reference internal" href="controllers.html#controller-recordings-label"><span>Recordings</span></a></dt>
+<dd>Either a list of recordings or the url of a single recording</dd>
+<dt><a class="reference internal" href="controllers.html#controller-score-label"><span>Score</span></a></dt>
+<dd>Pass evaluated recording scores back to your recorder system</dd>
+<dt><a class="reference internal" href="controllers.html#controller-stream-label"><span>Stream</span></a></dt>
 <dd>A proxy to download the recording to a media player</dd>
 </dl>
 </div>
@@ -249,10 +255,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="middleware.html" class="btn btn-neutral float-right" title="Middleware" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="controllers.html" class="btn btn-neutral float-right" title="Controllers" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="concept.html" class="btn btn-neutral" title="Conceptual Overview" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="middleware.html" class="btn btn-neutral" title="Middleware" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

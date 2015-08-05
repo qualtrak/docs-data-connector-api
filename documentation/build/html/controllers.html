@@ -32,7 +32,7 @@
   
     <link rel="top" title="dataconnectorapi 0.0.1 documentation" href="index.html"/>
         <link rel="next" title="Plain old class objects" href="poco.html"/>
-        <link rel="prev" title="Middleware" href="middleware.html"/> 
+        <link rel="prev" title="RESTful implemetation" href="restfulapi.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -92,21 +92,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test.html#search-criteria-matrix">Search Criteria Matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#build-search-criteria">Build search criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#test-users">Test Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#test-recordings">Test Recordings</a></li>
-<li class="toctree-l3"><a class="reference internal" href="test.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="artefact.html">Generate SQL Script</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artefact.html#generate-an-sql-script-required-during-the-installation-of-coach">Generate an SQL script required during the installation of Coach</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="restfulapi.html">RESTful implemetation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatiscoach.html">What is Coach?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="whatiscoach.html#high-availability">High Availability</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a><ul>
@@ -122,6 +122,10 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#connector">Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#get-connector">Get Connector</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#users">Users</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#get-list-of-users">Get list of users</a></li>
 </ul>
@@ -131,12 +135,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#get-list-of-recordings">Get list of recordings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#connector">Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#get-connector">Get Connector</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#score">Score</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#push-score">Push Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#stream">Stream</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#stream-recording">Stream recording</a></li>
 </ul>
 </li>
 </ul>
@@ -203,8 +207,27 @@
   <div class="section" id="controllers">
 <h1>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h1>
 <p>Controllers are the RESTful API end points.  These controllers act as the conduit between <code class="docutils literal"><span class="pre">Coach</span></code> and your <code class="docutils literal"><span class="pre">Connector</span></code> implementation.  These controllers <strong>should rarely change</strong>.</p>
+<div class="section" id="connector">
+<span id="controller-connector-label"></span><h2>Connector<a class="headerlink" href="#connector" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="get-connector">
+<h3>Get Connector<a class="headerlink" href="#get-connector" title="Permalink to this headline">¶</a></h3>
+<p>To be used to check that the connector is present. <em>Used predominatley by the Test Suite</em>.</p>
+<div class="highlight-xml"><div class="highlight"><pre>GET api/connector
+</pre></div>
+</div>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre> <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Get</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
 <div class="section" id="users">
-<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<span id="controller-users-label"></span><h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="get-list-of-users">
 <h3>Get list of users<a class="headerlink" href="#get-list-of-users" title="Permalink to this headline">¶</a></h3>
 <p>To return a list of users from the rcorder connector.</p>
@@ -254,7 +277,7 @@
 </div>
 </div>
 <div class="section" id="recordings">
-<h2>Recordings<a class="headerlink" href="#recordings" title="Permalink to this headline">¶</a></h2>
+<span id="controller-recordings-label"></span><h2>Recordings<a class="headerlink" href="#recordings" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="get-recoring-url">
 <h3>Get recoring url<a class="headerlink" href="#get-recoring-url" title="Permalink to this headline">¶</a></h3>
 <p>To get the url of a recording from the recorder connector.</p>
@@ -321,27 +344,8 @@
 
 </div>
 </div>
-<div class="section" id="connector">
-<h2>Connector<a class="headerlink" href="#connector" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="get-connector">
-<h3>Get Connector<a class="headerlink" href="#get-connector" title="Permalink to this headline">¶</a></h3>
-<p>To be used to check that the connector is present. <em>Used predominatley by the Test Suite</em>.</p>
-<div class="highlight-xml"><div class="highlight"><pre>GET api/connector
-</pre></div>
-</div>
-<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre> <span class="k">public</span> <span class="kt">bool</span> <span class="nf">Get</span><span class="p">()</span>
- <span class="p">{</span>
-     <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
- <span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-</div>
 <div class="section" id="score">
-<h2>Score<a class="headerlink" href="#score" title="Permalink to this headline">¶</a></h2>
+<span id="controller-score-label"></span><h2>Score<a class="headerlink" href="#score" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="push-score">
 <h3>Push Score<a class="headerlink" href="#push-score" title="Permalink to this headline">¶</a></h3>
 <p>To be used to check that the connector is present. <em>Used predominatley by the Test Suite</em>.</p>
@@ -372,6 +376,95 @@
 
 </div>
 </div>
+<div class="section" id="stream">
+<span id="controller-stream-label"></span><h2>Stream<a class="headerlink" href="#stream" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="stream-recording">
+<h3>Stream recording<a class="headerlink" href="#stream-recording" title="Permalink to this headline">¶</a></h3>
+<p>To be used to obtain a recording stream.</p>
+<div class="highlight-xml"><div class="highlight"><pre>GET api/stream
+</pre></div>
+</div>
+<div class="highlight-c#"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class="code"><div class="highlight"><pre> <span class="k">public</span> <span class="n">System</span><span class="p">.</span><span class="n">Net</span><span class="p">.</span><span class="n">Http</span><span class="p">.</span><span class="n">HttpResponseMessage</span> <span class="n">Get</span><span class="p">(</span><span class="kt">string</span> <span class="n">url</span><span class="p">)</span>
+ <span class="p">{</span>
+     <span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="n">NinjectWebCommon</span><span class="p">.</span><span class="n">Kernel</span><span class="p">.</span><span class="n">Get</span><span class="p">&lt;</span><span class="n">IApiFacade</span><span class="p">&gt;();</span>
+     <span class="k">try</span>
+     <span class="p">{</span>
+<span class="hll">         <span class="kt">var</span> <span class="n">stream</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="n">GetStream</span><span class="p">(</span><span class="n">url</span><span class="p">);</span>
+</span>         <span class="kt">bool</span> <span class="n">match</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+         <span class="n">HttpResponseMessage</span> <span class="n">output</span><span class="p">;</span>
+
+         <span class="n">output</span> <span class="p">=</span> <span class="k">this</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">CreateResponse</span><span class="p">(</span><span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">OK</span><span class="p">);</span>
+         <span class="n">output</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StreamContent</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+         <span class="n">output</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">ContentDisposition</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ContentDispositionHeaderValue</span><span class="p">(</span><span class="s">&quot;attachment&quot;</span><span class="p">);</span>
+
+         <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="k">this</span><span class="p">.</span><span class="n">_listOfMediaFileTypes</span><span class="p">)</span>
+         <span class="p">{</span>
+             <span class="k">if</span> <span class="p">(</span><span class="n">url</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">Ext</span><span class="p">))</span>
+             <span class="p">{</span>
+                 <span class="n">output</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaTypeHeaderValue</span><span class="p">(</span><span class="n">item</span><span class="p">.</span><span class="n">MimeType</span><span class="p">);</span>
+                 <span class="n">output</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">ContentDisposition</span><span class="p">.</span><span class="n">FileName</span> <span class="p">=</span> <span class="s">&quot;recording&quot;</span> <span class="p">+</span> <span class="n">item</span><span class="p">.</span><span class="n">Ext</span><span class="p">;</span>
+                 <span class="n">match</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                 <span class="k">break</span><span class="p">;</span>
+             <span class="p">}</span>
+         <span class="p">}</span>
+
+         <span class="k">if</span> <span class="p">(!</span><span class="n">match</span><span class="p">)</span>
+         <span class="p">{</span>
+             <span class="n">output</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaTypeHeaderValue</span><span class="p">(</span><span class="s">&quot;audio/x-wav&quot;</span><span class="p">);</span>
+             <span class="n">output</span><span class="p">.</span><span class="n">Content</span><span class="p">.</span><span class="n">Headers</span><span class="p">.</span><span class="n">ContentDisposition</span><span class="p">.</span><span class="n">FileName</span> <span class="p">=</span> <span class="s">&quot;recording.wav&quot;</span><span class="p">;</span>
+         <span class="p">}</span>
+
+         <span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+     <span class="p">{</span>
+         <span class="n">Trace</span><span class="p">.</span><span class="n">TraceError</span><span class="p">(</span><span class="s">&quot;connector : [{0}]&quot;</span><span class="p">,</span> <span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="k">return</span> <span class="k">new</span> <span class="nf">HttpResponseMessage</span><span class="p">(</span><span class="n">HttpStatusCode</span><span class="p">.</span><span class="n">NotFound</span><span class="p">);</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+</div>
 </div>
 
 
@@ -383,7 +476,7 @@
         <a href="poco.html" class="btn btn-neutral float-right" title="Plain old class objects" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="middleware.html" class="btn btn-neutral" title="Middleware" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="restfulapi.html" class="btn btn-neutral" title="RESTful implemetation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

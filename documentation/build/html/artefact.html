@@ -93,6 +93,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="test.html">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="test.html#search-criteria-matrix">Search Criteria Matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#build-search-criteria">Build search criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#test-users">Test Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="test.html#test-recordings">Test Recordings</a></li>
@@ -105,11 +106,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="restfulapi.html">RESTful implemetation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatiscoach.html">What is Coach?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="whatiscoach.html#high-availability">High Availability</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a><ul>
@@ -125,6 +123,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#users">Users</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-users">Get list of users</a></li>
 </ul>
@@ -134,12 +136,12 @@
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-recordings">Get list of recordings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#score">Score</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#push-score">Push Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#stream">Stream</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#stream-recording">Stream recording</a></li>
 </ul>
 </li>
 </ul>
@@ -213,7 +215,7 @@
 <p>After you have tested both the Users and Media, you will be prompt to provide your contact details. This process you create you an account on our developer portal and you&#8217;ll be sent an Email with a link to log into this portal.</p>
 <p>The last part of this process is generating the T-SQL that is required during the deployment of the Coach product.  The T-SQL this will be generated will describe to Coach everything that you have entered during this process.  You will have been sent an Email through out this process containing a link that you can use to modify your recorder configuration.</p>
 <p>You will see a <code class="docutils literal"><span class="pre">Generate</span> <span class="pre">Sql</span></code> button at the bottom of the progress bar, situated on the left side of the page.  Please press this.</p>
-<img alt="alternate text" class="align-center" src="_images/generate-sql.png" />
+<img alt="generate sql" class="align-left" src="_images/generate-sql.png" />
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
 <p class="last">You will now receive one final Email. This Email will have an attachment.  This attachment is the T-SQL script you need to place in the Database folder of the installation package.</p>

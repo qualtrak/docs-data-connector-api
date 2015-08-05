@@ -3,6 +3,34 @@ Controllers
 
 Controllers are the RESTful API end points.  These controllers act as the conduit between ``Coach`` and your ``Connector`` implementation.  These controllers **should rarely change**.
 
+   
+.. _controller-connector-label:
+   
+==========    
+Connector
+==========
+
+Get Connector
+~~~~~~~~~~~~~
+
+To be used to check that the connector is present. *Used predominatley by the Test Suite*.
+ 
+.. code-block:: xml
+
+    GET api/connector
+    
+.. code-block:: c#
+   :linenos:  
+           
+           
+    public bool Get()
+    {
+        return true;
+    }           
+
+
+.. _controller-users-label:
+
 =====
 Users
 =====
@@ -48,6 +76,7 @@ Dependency on:
 	POCO that holds Recorder User information.
     
     
+.. _controller-recordings-label:
     
 ==========    
 Recordings
@@ -118,29 +147,7 @@ Dependency on:
 
     POCO used to wrap the information required to return a subset of recordings from the recorder        
 
-   
-==========    
-Connector
-==========
-
-Get Connector
-~~~~~~~~~~~~~
-
-To be used to check that the connector is present. *Used predominatley by the Test Suite*.
- 
-.. code-block:: xml
-
-    GET api/connector
-    
-.. code-block:: c#
-   :linenos:  
-           
-           
-    public bool Get()
-    {
-        return true;
-    }           
-
+.. _controller-score-label:
 
 ==========    
 Score
@@ -172,4 +179,64 @@ Dependency on:
 .. function:: DataConnectorEvaluationScore
 
 	POCO that holds evaluation information information.
+    
+.. _controller-stream-label:
+
+==========    
+Stream
+==========
+
+Stream recording
+~~~~~~~~~~~~~~~~
+
+To be used to obtain a recording stream. 
+ 
+.. code-block:: xml
+
+    GET api/stream
+    
+.. code-block:: c#
+   :linenos:           
+   :emphasize-lines: 6  
+           
+    public System.Net.Http.HttpResponseMessage Get(string url)
+    {
+        var client = NinjectWebCommon.Kernel.Get<IApiFacade>();
+        try
+        {
+            var stream = client.GetStream(url);
+            bool match = false;
+            HttpResponseMessage output;
+
+            output = this.Request.CreateResponse(HttpStatusCode.OK);
+            output.Content = new StreamContent(stream);
+            output.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
+
+            foreach (var item in this._listOfMediaFileTypes)
+            {
+                if (url.Contains(item.Ext))
+                {
+                    output.Content.Headers.ContentType = new MediaTypeHeaderValue(item.MimeType);
+                    output.Content.Headers.ContentDisposition.FileName = "recording" + item.Ext;
+                    match = true;
+                    break;
+                }
+            }
+
+            if (!match)
+            {
+                output.Content.Headers.ContentType = new MediaTypeHeaderValue("audio/x-wav");
+                output.Content.Headers.ContentDisposition.FileName = "recording.wav";
+            }
+
+            return output;
+        }
+        catch (Exception ex)
+        {
+            Trace.TraceError("connector : [{0}]", ex.Message);
+        }
+
+        return new HttpResponseMessage(HttpStatusCode.NotFound);
+    }
+    
         

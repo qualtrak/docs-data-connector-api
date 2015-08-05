@@ -93,6 +93,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Test your Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#search-criteria-matrix">Search Criteria Matrix</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#build-search-criteria">Build search criteria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-users">Test Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#test-recordings">Test Recordings</a></li>
@@ -105,11 +106,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concept.html">Conceptual Overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="restfulapi.html">RESTful implemetation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#plug-your-own-or-other-3rd-party-api-s-into-middleware">Plug your own (or other 3rd party) api&#8217;s into middleware</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#target-different-deployments">Target different deployments</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#controllers">Controllers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="restfulapi.html#handlers">Handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whatiscoach.html">What is Coach?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="whatiscoach.html#high-availability">High Availability</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="middleware.html">Middleware</a><ul>
@@ -125,6 +123,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="controllers.html">Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#users">Users</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-users">Get list of users</a></li>
 </ul>
@@ -134,12 +136,12 @@
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#get-list-of-recordings">Get list of recordings</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="controllers.html#connector">Connector</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="controllers.html#get-connector">Get Connector</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html#score">Score</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="controllers.html#push-score">Push Score</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html#stream">Stream</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="controllers.html#stream-recording">Stream recording</a></li>
 </ul>
 </li>
 </ul>
@@ -210,6 +212,12 @@
 <p>Here, we will walk you though how to test your connector from our <strong>Integratio Tool</strong> <a class="footnote-reference" href="#f1" id="id1">[1]</a> .  You will need to host this end point.  You can do this though IIS and allowing port 80 through your firewall.  You IP address or domain name will be required by our <strong>Integration Tool</strong>.</p>
 <img alt="alternate text" class="align-center" src="_images/basic-information.png" />
 <p>Next, you will be asked for the media player you wish to use.</p>
+<div class="section" id="search-criteria-matrix">
+<h2>Search Criteria Matrix<a class="headerlink" href="#search-criteria-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Within Coach you have several different input types <code class="docutils literal"><span class="pre">data</span> <span class="pre">types</span></code> available to you that best describes the data you want to filter on.</p>
+<p>See <a class="reference download internal" href="_downloads/Search-Criteria-Matrix.pdf"><code class="xref download docutils literal"><span class="pre">Search</span> <span class="pre">Criteria</span> <span class="pre">Matrix</span></code></a> document for the data types and their conditions.</p>
+<p>For more information on these data types see <a class="reference internal" href="datatypes.html#datatypes-label"><span>Data Types</span></a>.</p>
+</div>
 <div class="section" id="build-search-criteria">
 <h2>Build search criteria<a class="headerlink" href="#build-search-criteria" title="Permalink to this headline">¶</a></h2>
 <p>You can use our <strong>Integration Tool</strong> to construct your recorder&#8217;s search criteria.</p>
@@ -228,15 +236,15 @@
 <h2>Test Recordings<a class="headerlink" href="#test-recordings" title="Permalink to this headline">¶</a></h2>
 <p>Open you connector code and place breakpoint just inside of the <strong>GetRecordingsForUsers</strong> method.</p>
 <p>Whem you press the <code class="docutils literal"><span class="pre">Test</span> <span class="pre">Media</span></code> button you get presented with this modal and you press <code class="kbd docutils literal"><span class="pre">OK</span></code></p>
-<img alt="alternate text" class="align-center" src="_images/test-get-recordings-pre.png" />
+<img alt="get recordings pre" class="align-center" src="_images/test-get-recordings-pre.png" />
 <p>It now hits your breakpoint. You first see a limit value. This is the maximum calls that Coach wants per agent. You will see <code class="docutils literal"><span class="pre">1000</span></code> is being passed as the <strong>tenantCode</strong>. Next you see that only 1 <a href="#id2"><span class="problematic" id="id3">**</span></a>userId* is passed.  Following this, you see that 4 search criteria have been passed. You will see `` `` for both username and password as the Integration Tool is not passing values for those.</p>
-<img alt="alternate text" class="align-center" src="_images/test-get-recordings.png" />
+<img alt="get recordings" class="align-center" src="_images/test-get-recordings.png" />
 <p>There is only one user passed in</p>
-<img alt="alternate text" class="align-center" src="_images/test-get-recordings-param-users.png" />
+<img alt="get recordings param usert" class="align-left" src="_images/test-get-recordings-param-users.png" />
 <p>Here we see a 4 criteria listed</p>
-<img alt="alternate text" class="align-center" src="_images/test-get-recordings-param-criteria.png" />
+<img alt="get recordings param criteria" class="align-left" src="_images/test-get-recordings-param-criteria.png" />
 <p>All criteria is expanded. Each criteria starts with an identifier, e.g. <code class="docutils literal"><span class="pre">date_0</span></code></p>
-<img alt="alternate text" class="align-center" src="_images/test-get-recordings-param-criteria-expanded.png" />
+<img alt="get recordings param criteria expanded" class="align-center" src="_images/test-get-recordings-param-criteria-expanded.png" />
 <p>This is a description of the critiera being passed to your method:</p>
 <dl class="docutils">
 <dt>Date Range</dt>

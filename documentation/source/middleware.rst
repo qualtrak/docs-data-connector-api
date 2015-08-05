@@ -6,17 +6,17 @@ The following sections talk you through the reason why we have done what have do
 Why?
 ----
 
-The Coach product has a dependency on recorder data.  To get this data into Coach it pulls data from a recorder by SOA.  This process can involve many hours of coding for each recorder and end client.
-
+The :ref:`Coach <whatiscoach-label>` product has a dependency on user and recording metadata. In order for Coach to obtain this data it reaches out to the Recorder via Service Orientated Architecture ``SOA``.  The reason for this api documentation is to show and help you work through this process.
+  
 What problem does this solve?
 -----------------------------
 
-Remove your reliance on Qualtrak to bring changes to your api into production.  Facilitates a robust approach to supporting multiple deployments through use of Inversion of Control ``IoC``.
+When one computer application requires information from another, we generally create an api to make this possible.  We have chosen to create a RESTful api to act as the intermeditary between our system and yours. This approach enables a decoupling between the two systems, removing your reliance on Qualtrak to bring any changes from your api into production.  
 
 How does it solve it?
 ---------------------
 
-Helps decouple the Coach product from a recorder by the use of RESTful api service in conjuntion with Inversion of Control.
+We manage the decoupling programmatically through the use of the Inversion of Control ``IoC`` pattern.
 
 IoC Container
 ~~~~~~~~~~~~~
@@ -28,6 +28,12 @@ RESTful API
 
 In computing, Representational State Transfer (REST) is a software architecture style for building scalable web services [#f4]_ .
 
+In this section we talk in more detail about our RESTful api that acts as the conduit between the 2 respective systems:
+
+.. toctree::
+   :titlesonly:
+	
+   restfulapi
 
 .. rubric:: Footnotes
 

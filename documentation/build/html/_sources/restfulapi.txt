@@ -29,19 +29,19 @@ Controllers
 
 What follows is a short description of each of the RESTful API end points:
 
-Users
+:ref:`Connectors <controller-connector-label>`
+	Used to test connectivity	
+	
+:ref:`Users <controller-users-label>`
 	A user from the Recorder
 
-Recordings
+:ref:`Recordings <controller-recordings-label>`
 	Either a list of recordings or the url of a single recording
 
-Score
+:ref:`Score <controller-score-label>`
 	Pass evaluated recording scores back to your recorder system
 
-Connectors
-	Used to test connectivity
-
-Stream
+:ref:`Stream <controller-stream-label>`
 	A proxy to download the recording to a media player
 
 

@@ -10,6 +10,16 @@ Here, we will walk you though how to test your connector from our **Integratio T
 Next, you will be asked for the media player you wish to use.     
 
 ======================
+Search Criteria Matrix
+======================
+
+Within Coach you have several different input types ``data types`` available to you that best describes the data you want to filter on.  
+
+See :download:`Search Criteria Matrix </pdfs/Search-Criteria-Matrix.pdf>` document for the data types and their conditions.
+
+For more information on these data types see :ref:`Data Types <datatypes-label>`.
+
+======================
 Build search criteria 
 ======================
 
@@ -50,31 +60,34 @@ Open you connector code and place breakpoint just inside of the **GetRecordingsF
 Whem you press the ``Test Media`` button you get presented with this modal and you press :kbd:`OK`
 
 .. image:: /images/test-get-recordings-pre.png      
-   :alt: alternate text
+   :alt: get recordings pre
    :align: center
 
 It now hits your breakpoint. You first see a limit value. This is the maximum calls that Coach wants per agent. You will see ``1000`` is being passed as the **tenantCode**. Next you see that only 1 **userId* is passed.  Following this, you see that 4 search criteria have been passed. You will see `` `` for both username and password as the Integration Tool is not passing values for those.      
    
 .. image:: /images/test-get-recordings.png      
-   :alt: alternate text
+   :alt: get recordings
    :align: center     
+   
    
 There is only one user passed in
 
 .. image:: /images/test-get-recordings-param-users.png      
-   :alt: alternate text
-   :align: center
-     
+   :alt: get recordings param usert
+   :align: left
+       
+    
 Here we see a 4 criteria listed
 
 .. image:: /images/test-get-recordings-param-criteria.png      
-   :alt: alternate text
-   :align: center  
+   :alt: get recordings param criteria
+   :align: left  
+   
    
 All criteria is expanded. Each criteria starts with an identifier, e.g. ``date_0``
    
 .. image:: /images/test-get-recordings-param-criteria-expanded.png      
-   :alt: alternate text
+   :alt: get recordings param criteria expanded
    :align: center     
    
 This is a description of the critiera being passed to your method: 
