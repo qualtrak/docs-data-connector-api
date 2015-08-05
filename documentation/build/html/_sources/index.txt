@@ -26,9 +26,9 @@ Contents:
    appendix
 
 
-The Getting started section :doc:`/gettingstarted`  is the best place to start if you are a developer tasked with the job of integrating your recorder with Coach.
+The :ref:`gettingstarted-label` section   is the best place to start if you are a developer tasked with the job of integrating your recorder with Coach.
 
-In this ``Getting Started`` section you will be guided through how to:
+In this :ref:`gettingstarted-label` section you will be guided through how to:
 
 * get the RESTFul api middleware
 * how to confirm middleware deployment is correct

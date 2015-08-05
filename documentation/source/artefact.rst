@@ -15,7 +15,7 @@ You will see a ``Generate Sql`` button at the bottom of the progress bar, situat
 
 .. image:: /images/generate-sql.png      
    :alt: generate sql
-   :align: left  
+   :align: center  
    
 .. Important::
 
