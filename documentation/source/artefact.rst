@@ -13,7 +13,7 @@ The last part of this process is generating the T-SQL that is required during th
 
 You will see a ``Generate Sql`` button at the bottom of the progress bar, situated on the left side of the page.  Please press this. 
 
-.. image:: /images/generate-sql.png      
+.. image:: /images/generate-sql.PNG      
    :alt: generate sql
    :align: center  
    

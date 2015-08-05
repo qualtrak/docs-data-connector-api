@@ -58,7 +58,7 @@ The above ``metadata`` json must be inserted into the returning ``RecordingInfo.
 
 This is how it the above looks in the Evaluation form:
 
-.. image:: /images/evaluation-metadata.png      
+.. image:: /images/evaluation-metadata.PNG      
    :alt: alternate text
    :align: center
    

@@ -25,7 +25,7 @@ Next, please clone our same recorder connector. This connector is what we use fo
 
 Next, create a Visual Studio solution and add these 2 projects. Your solution will look similar to this:
 
-.. image:: /images/new-solution.png      
+.. image:: /images/new-solution.PNG      
    :alt: alternate text
    :align: center
 
@@ -65,7 +65,7 @@ Select the DataConnect project, right-click and ``Set as StartUp Project``. Now 
 
 Copy the address, in my example it is ``http://localhost:20908/``, into PostMan and press ``Send``:
 
-.. image:: /images/postman-get-connector.png      
+.. image:: /images/postman-get-connector.PNG      
    :alt: alternate text
    :align: center
    

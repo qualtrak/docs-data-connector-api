@@ -11,7 +11,7 @@ Add a new project to your Visual Studio solution.  For ease, reuse the QATestRec
 
 I have created a new connector and called the project ``recorder-abc`` with the namespace of ``ABCRecorder``:
 
-.. image:: /images/my-recorder.png      
+.. image:: /images/my-recorder.PNG      
    :alt: alternate text
    :align: center
    
