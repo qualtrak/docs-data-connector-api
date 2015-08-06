@@ -81,7 +81,7 @@ Copy the address, in my example it is ``http://localhost:20908/api/connector``, 
    :alt: alternate text
    :align: center
 
-You'll see the brakepoint hit:
+You'll see the breakpoint hit:
 
 .. image:: /images/connector-controller-brakepoint-hit.PNG
    :alt: alternate text

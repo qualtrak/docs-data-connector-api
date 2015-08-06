@@ -3,10 +3,10 @@ Controllers
 
 Controllers are the RESTful API end points.  These controllers act as the conduit between ``Coach`` and your ``Connector`` implementation.  These controllers **should rarely change**.
 
-   
+
 .. _controller-connector-label:
-   
-==========    
+
+==========
 Connector
 ==========
 
@@ -14,19 +14,19 @@ Get Connector
 ~~~~~~~~~~~~~
 
 To be used to check that the connector is present. *Used predominatley by the Test Suite*.
- 
+
 .. code-block:: xml
 
     GET api/connector
-    
+
 .. code-block:: c#
-   :linenos:  
-           
-           
+   :linenos:
+
+
     public bool Get()
     {
         return true;
-    }           
+    }
 
 
 .. _controller-users-label:
@@ -42,14 +42,14 @@ To return a list of users from the rcorder connector.
 
 .. code-block:: xml
 
-    GET api/Users?tenantCode=1000&username=manager.a&password=123456      
-	
+    GET api/Users?tenantCode=1000&username=manager.a&password=123456
 
-        
+
+
 .. code-block:: c#
    :linenos:
-   :emphasize-lines: 8,8  
-	
+   :emphasize-lines: 8,8
+
     public IEnumerable<RecorderUserInfo> Get(string tenantCode, string username, string password)
     {
         var list = new List<RecorderUserInfo>();
@@ -68,17 +68,17 @@ To return a list of users from the rcorder connector.
     }
 
 
-    
+
 Dependency on:
-	
+
 .. function:: RecorderUserInfo
 
 	POCO that holds Recorder User information.
-    
-    
+
+
 .. _controller-recordings-label:
-    
-==========    
+
+==========
 Recordings
 ==========
 
@@ -86,11 +86,11 @@ Get recoring url
 ~~~~~~~~~~~~~~~~
 
 To get the url of a recording from the recorder connector.
- 
+
 .. code-block:: xml
 
     GET api/recordings?tenantCode=1000&username=manager.a&password=123456&recordingid=123abc&originalRecordingUrl=http://calls.recorder.com/recording.aspx?id=123abc
-    
+
 .. code-block:: c#
    :linenos:
    :emphasize-lines: 4,4
@@ -102,19 +102,19 @@ To get the url of a recording from the recorder connector.
         var url = client.GetRecordingUrl(recordingId, originalRecordingUrl, username, password);
         return url;
     }
-    
-  
+
+
 Get list of recordings
 ~~~~~~~~~~~~~~~~~~~~~~
-    
+
 To get a list of recordings from the recorder connector.
-    
+
 .. code-block:: xml
 
     POST api/recordings
-    
+
     {
-        "Key":"",        
+        "Key":"",
         "Limit":"",
         "TenantCode":"",
         "UserId":"",
@@ -123,9 +123,9 @@ To get a list of recordings from the recorder connector.
         "TimeZone":"",
         "Username":"",
         "Password":""
-    }      
+    }
 
- 	
+
 .. code-block:: c#
    :linenos:
    :emphasize-lines: 4,4
@@ -136,20 +136,20 @@ To get a list of recordings from the recorder connector.
         var response = client.GetRecordings(filter.Key, filter.Limit, "1000", filter.UserId, filter.SearchCriteria, filter.Username, filter.Password);
         return response;
     }
-    
+
 Dependency on:
-	
+
 .. function:: RecordingInfo
 
 	POCO that holds Recording information.
-    
+
 .. function:: DataContractRecordingListFilter
 
-    POCO used to wrap the information required to return a subset of recordings from the recorder        
+    POCO used to wrap the information required to return a subset of recordings from the recorder
 
 .. _controller-score-label:
 
-==========    
+==========
 Score
 ==========
 
@@ -157,15 +157,15 @@ Push Score
 ~~~~~~~~~~
 
 To be used to check that the connector is present. *Used predominatley by the Test Suite*.
- 
+
 .. code-block:: xml
 
     POST api/score
-    
+
 .. code-block:: c#
-   :linenos:           
-   :emphasize-lines: 4,5,6  
-           
+   :linenos:
+   :emphasize-lines: 4,5,6
+
     public void Post(DataConnectorEvaluationScore evaluationScore)
     {
         var client = NinjectWebCommon.Kernel.Get<IApiFacade>();
@@ -173,32 +173,32 @@ To be used to check that the connector is present. *Used predominatley by the Te
             evaluationScore.Password, evaluationScore.EvaluationId, evaluationScore.HeadlineScore,
             evaluationScore.ExtraScore, evaluationScore.UserId, evaluationScore.RecordingId);
     }
-    
+
 Dependency on:
-	
+
 .. function:: DataConnectorEvaluationScore
 
 	POCO that holds evaluation information information.
-    
+
 .. _controller-stream-label:
 
-==========    
+==========
 Stream
 ==========
 
 Stream recording
 ~~~~~~~~~~~~~~~~
 
-To be used to obtain a recording stream. 
- 
+To be used to obtain a recording stream.
+
 .. code-block:: xml
 
     GET api/stream
-    
+
 .. code-block:: c#
-   :linenos:           
-   :emphasize-lines: 6  
-           
+   :linenos:
+   :emphasize-lines: 6
+
     public System.Net.Http.HttpResponseMessage Get(string url)
     {
         var client = NinjectWebCommon.Kernel.Get<IApiFacade>();
@@ -238,5 +238,3 @@ To be used to obtain a recording stream.
 
         return new HttpResponseMessage(HttpStatusCode.NotFound);
     }
-    
-        
