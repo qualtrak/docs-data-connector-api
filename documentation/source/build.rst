@@ -1,9 +1,9 @@
+=====================
 Create your Connector
 =====================
 
 Here you will be shown how to build and test your ``connector``.
 
-=========================
 How to create a connector
 =========================
 
@@ -15,7 +15,6 @@ I have created a new connector and called the project ``recorder-abc`` with the 
    :alt: alternate text
    :align: center
    
-==================================
 How to interpret method parameters
 ==================================
 

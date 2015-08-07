@@ -1,3 +1,4 @@
+===================
 Test your Connector
 ===================
 
@@ -9,7 +10,6 @@ Here, we will walk you though how to test your connector from our **Integratio T
    
 Next, you will be asked for the media player you wish to use.     
 
-======================
 Search Criteria Matrix
 ======================
 
@@ -19,7 +19,6 @@ See :download:`Search Criteria Matrix </pdfs/Search-Criteria-Matrix.pdf>` docume
 
 For more information on these data types see :ref:`Data Types <datatypes-label>`.
 
-======================
 Build search criteria 
 ======================
 
@@ -31,7 +30,6 @@ Here, you will see that we have defined the search criteria as having 3 fields; 
    :alt: alternate text
    :align: center
    
-==========
 Test Users
 ==========
 
@@ -49,11 +47,9 @@ It now hits your breakpoint. You will see ``1000`` is being passed as the **tena
    :alt: alternate text
    :align: center   
    
-===============
+   
 Test Recordings
 ===============
-
-
    
 Open you connector code and place breakpoint just inside of the **GetRecordingsForUsers** method.
 

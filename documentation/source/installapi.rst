@@ -1,3 +1,4 @@
+===========
 Install API
 ===========
 
@@ -5,7 +6,6 @@ Install API
 
     You will need Visual Studio 2013 and PostMan
 
-===============================
 Download RESTful api middleware
 ===============================
 
@@ -43,7 +43,6 @@ Next, add these 2 projects. Your solution will look similar to this:
    If you are prompted to restore packages from nuget, accept.
 
 
-==================
 Build the solution
 ==================
 
@@ -67,7 +66,6 @@ We don't have to change the ninject.xml file now as the default contains the map
 
 Finally, rebuild the solution.  You are now ready to run and serve up the DataConnector RESTful api.
 
-===================================
 Confirm middleware deployment works
 ===================================
 

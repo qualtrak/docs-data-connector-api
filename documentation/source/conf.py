@@ -50,7 +50,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'dataconnectorapi'
+project = 'data-connector-api'
 copyright = '2015, Qualtrak Solutions Ltd'
 author = 'Qualtrak'
 
@@ -207,7 +207,7 @@ html_static_path = ['nstatic']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'dataconnectorapidoc'
+htmlhelp_basename = 'data-connector-api-doc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -229,7 +229,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'dataconnectorapi.tex', 'dataconnectorapi Documentation',
+  (master_doc, 'data-connector-api.tex', 'data-connector-api Documentation',
    'Garrard Kitchen', 'manual'),
 ]
 
@@ -259,7 +259,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'dataconnectorapi', 'dataconnectorapi Documentation',
+    (master_doc, 'data-connector-api', 'data-connector-api Documentation',
      [author], 1)
 ]
 
@@ -273,8 +273,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'dataconnectorapi', 'dataconnectorapi Documentation',
-   author, 'dataconnectorapi', 'One line description of project.',
+  (master_doc, 'data-connector-api', 'data-connector-api Documentation',
+   author, 'data-connector-api', 'One line description of project.',
    'Miscellaneous'),
 ]
 
