@@ -1,12 +1,12 @@
 Plain old class objects
------------------------        
+-----------------------
 
 These are the classes the the RESTful implementation depends on.  These class can be used to pass information to the RESTful api or used to wrap data being returned from the RESTful api.
-    
-    
+
+
 .. _RecorderUserInfo-label:
-    
-================    
+
+================
 RecorderUserInfo
 ================
 
@@ -30,7 +30,7 @@ RecorderUserInfo
         [DataMember]
         public String RecorderAcountID { get; set; }
 
-        //This is the password of the user’s account.  
+        //This is the password of the user’s account.
         [DataMember]
         public String RecorderAcountPassword { get; set; }
 
@@ -56,7 +56,7 @@ RecordingInfo
 
 .. code-block:: c#
    :linenos:
-   
+
     [DataContract]
     public class RecordingInfo
     {
@@ -86,7 +86,7 @@ RecordingInfo
         [DataMember]
         public string Metadata { get; set; }
     }
-    
+
 
 .. _SearchCriteria-label:
 
@@ -97,8 +97,8 @@ SearchCriteria
 This POCO is used to wrap the search criteria that is destined for the recorder.
 
 .. code-block:: c#
-   :linenos:    
-    
+   :linenos:
+
     [DataContract]
     public class SearchCriteria
     {
@@ -120,8 +120,9 @@ This POCO is used to wrap the search criteria that is destined for the recorder.
         [DataMember]
         public System.TypeCode SearchVariableDataType { get; set; }
     }
-    
-    
+
+
+.. _DataConnectorEvaluationScore-label:
 
 =============
 DataConnectorEvaluationScore
@@ -130,8 +131,8 @@ DataConnectorEvaluationScore
 This POCO is used to wrap the evaluation score information that is destined for the recorder.
 
 .. code-block:: c#
-   :linenos:        
-    
+   :linenos:
+
     [DataContract]
     [Serializable]
     public class DataConnectorEvaluationScore : IDataConnectorEvaluationScore
@@ -147,7 +148,7 @@ This POCO is used to wrap the evaluation score information that is destined for 
 
         [DataMember]
         public string EvaluationId { get; set; }
-        
+
         [DataMember]
         public string HeadlineScore { get; set; }
 
@@ -159,9 +160,10 @@ This POCO is used to wrap the evaluation score information that is destined for 
 
         [DataMember]
         public string RecordingId { get; set; }
-    }    
-    
+    }
 
+
+.. _DataContractRecordingListFilter-label:
 
 =============
 DataContractRecordingListFilter
@@ -170,8 +172,8 @@ DataContractRecordingListFilter
 This POCO is used to wrap the information required to return a subset of recordings from the recorder
 
 .. code-block:: c#
-   :linenos:       
-    
+   :linenos:
+
     [DataContract]
     [Serializable]
     public class DataContractRecordingListFilter : IDataContractRecordingListFilter
@@ -199,4 +201,4 @@ This POCO is used to wrap the information required to return a subset of recordi
 
         [DataMember]
         public string Password { get; set; }
-    }    
+    }

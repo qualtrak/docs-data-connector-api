@@ -1,7 +1,7 @@
 Controllers
 ===========
 
-Controllers are the RESTful API end points.  These controllers act as the conduit between ``Coach`` and your ``Connector`` implementation.  These controllers **should rarely change**.
+Controllers are the RESTful API end points.  These controllers act as the conduit between **oach** and your ``Connector`` implementation.  These controllers **should rarely change**.
 
 
 .. _controller-connector-label:
@@ -71,9 +71,8 @@ To return a list of users from the rcorder connector.
 
 Dependency on:
 
-.. function:: RecorderUserInfo
-
-	POCO that holds Recorder User information.
+    :ref:`RecorderUserInfo <RecorderUserInfo-label>`
+    	POCO that holds Recorder User information.
 
 
 .. _controller-recordings-label:
@@ -139,13 +138,11 @@ To get a list of recordings from the recorder connector.
 
 Dependency on:
 
-.. function:: RecordingInfo
+    :ref:`RecordingInfo <RecordingInfo-label>`
+        POCO that holds Recording information.
 
-	POCO that holds Recording information.
-
-.. function:: DataContractRecordingListFilter
-
-    POCO used to wrap the information required to return a subset of recordings from the recorder
+    :ref:`DataContractRecordingListFilter <DataContractRecordingListFilter-label>`
+        POCO used to wrap the information required to return a subset of recordings from the recorder
 
 .. _controller-score-label:
 
@@ -176,9 +173,8 @@ To be used to check that the connector is present. *Used predominatley by the Te
 
 Dependency on:
 
-.. function:: DataConnectorEvaluationScore
-
-	POCO that holds evaluation information information.
+    :ref:`DataConnectorEvaluationScore <DataConnectorEvaluationScore-label>`
+	   POCO that holds evaluation information information.
 
 .. _controller-stream-label:
 

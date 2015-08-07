@@ -3,16 +3,16 @@ RESTful implemetation
 
 This illustration shows the relationship between the api and the deployment process of the Coach product:
 
-.. image:: /images/coachintegrationdiagram.PNG      
+.. image:: /images/coachintegrationdiagram.PNG
    :alt: alternate text
    :align: center
 
-In the above illustration you see the ``Coach`` product.  ``Coach`` calls on end points [e.g. users] to either pull or push data.  
+In the above illustration you see the ``Coach`` product.  ``Coach`` calls on end points [e.g. users] to either pull or push data.
 
 These end points in turn will call out to a recorder via a ``Connector`` implementation.  The ``Connector`` implementation will be code that you specifically write to talk to your recorder.  In this ``Connector`` you will (a) reference your own api and (b) interpret that data [e.g. search criteria] that is being passed from the RESTful end point.
 
 The last [far right] part of this illustration explains how you test your implementation and what part this plays during the installation.
- 
+
 
 Plug your own (or other 3rd party) api's into middleware
 --------------------------------------------------------
@@ -22,7 +22,7 @@ The RESTful api is the container that you use to hook into a ``connector``.  The
 Target different deployments
 ----------------------------
 
-This robust RESTful api approach not only offers you a way to quickly code transactions with your api but the other benefit is removes the complexity of using minor permutations of your api with different end-clients through the use of IoC. 
+This robust RESTful api approach not only offers you a way to quickly code transactions with your api but the other benefit is removes the complexity of using minor permutations of your api with different end-clients through the use of IoC.
 
 Controllers
 -----------
@@ -30,8 +30,8 @@ Controllers
 What follows is a short description of each of the RESTful API end points:
 
 :ref:`Connectors <controller-connector-label>`
-	Used to test connectivity	
-	
+	Used to test connectivity
+
 :ref:`Users <controller-users-label>`
 	A user from the Recorder
 
@@ -50,5 +50,3 @@ Handlers
 
 :ref:`basicauthhandler-label`
 	A proxy to download the recording when needing to satisfy a Basic Authentication challenge
-
-

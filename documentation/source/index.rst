@@ -8,14 +8,14 @@ Welcome to Data Connector Api's documentation!
 
 .. note::
 
-    The is a RESTful implementation. Code is written in c#  
-    
+    The is a RESTful implementation. Code is written in c#
+
 Contents:
 
 .. toctree::
    :maxdepth: 1
-   
-   gettingstarted   
+
+   gettingstarted
    concept
    controllers
    poco
@@ -26,13 +26,13 @@ Contents:
    appendix
 
 
-The :ref:`gettingstarted-label` section   is the best place to start if you are a developer tasked with the job of integrating your recorder with Coach.
+The :ref:`gettingstarted-label` section   is the best place to start if you are a developer tasked with the job of integrating your recorder with **Coach**.
 
 In this :ref:`gettingstarted-label` section you will be guided through how to:
 
-* get the RESTFul api middleware
-* how to confirm middleware deployment is correct
-* how to build search criteria via our Test Suite
+* how to obtain the RESTful api middleware
+* how to confirm that the middleware deployment is correct
+* how to build search criteria with our **Integration Tool**
 * how to create your connector
-* how to test your search criteria against your middleware
-* how to generate an artefact required during the installation of Coach
+* how to test your search criteria with your new middleware
+* how to generate an artefact required during the installation of **Coach**
