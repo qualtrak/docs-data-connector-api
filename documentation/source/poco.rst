@@ -1,7 +1,7 @@
 Plain old class objects
 -----------------------
 
-These are the classes the the RESTful implementation depends on.  These class can be used to pass information to the RESTful api or used to wrap data being returned from the RESTful api.
+These are the classes the the RESTful implementation depends on.  These ``classes`` can be used to pass information to the RESTful API or used to wrap data being returned from the RESTful API.
 
 
 .. _RecorderUserInfo-label:

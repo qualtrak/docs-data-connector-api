@@ -10,6 +10,6 @@ High Availability
 
 Coach is available with HA. This infographic explains the configuration required for HA:
 
-.. image:: /images/coach-ha-infographic.jpg      
+.. image:: /images/coach-ha-infographic.jpg
    :alt: coach ha infographic
    :align: center

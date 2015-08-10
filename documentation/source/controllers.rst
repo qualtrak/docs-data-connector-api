@@ -81,8 +81,8 @@ Dependency on:
 Recordings
 ==========
 
-Get recoring url
-~~~~~~~~~~~~~~~~
+Get recording url
+~~~~~~~~~~~~~~~~~
 
 To get the url of a recording from the recorder connector.
 
