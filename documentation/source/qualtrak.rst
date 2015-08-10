@@ -4,7 +4,7 @@ Qualtrak
 Who we are
 ----------
 
-Qualtrak was initially founded in 1998 as Europe’s first specialist consulting business helping contact centers of all sizes to implement an effective Quality Monitoring and Coaching program or to renew their quality program. 
+Qualtrak was initially founded in 1998 as Europe’s first specialist consulting business helping contact centers of all sizes to implement an effective Quality Monitoring and Coaching program or to renew their quality program.
 
 What we do
 ----------

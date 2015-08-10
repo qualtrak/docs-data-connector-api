@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Data Connector Api's documentation!
+Welcome to Data Connector API documentation!
 ============================================
 
 .. note::
@@ -30,9 +30,9 @@ The :ref:`gettingstarted-label` section   is the best place to start if you are 
 
 In this :ref:`gettingstarted-label` section you will be guided through how to:
 
-* how to obtain the RESTful api middleware
-* how to confirm that the middleware deployment is correct
-* how to build search criteria with our **Integration Tool**
-* how to create your connector
-* how to test your search criteria with your new middleware
-* how to generate an artefact required during the installation of **Coach**
+* obtain the RESTful api middleware
+* confirm that the middleware deployment is correct
+* build search criteria with our `Integration Tool <http://dev.qualtrak.com/Cit>`_
+* create your connector
+* test your search criteria with your new middleware
+* generate an artefact required during the installation of **Coach**

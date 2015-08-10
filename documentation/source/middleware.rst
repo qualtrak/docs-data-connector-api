@@ -11,7 +11,7 @@ The :ref:`Coach <whatiscoach-label>` product has a dependency on user and record
 What problem does this solve?
 -----------------------------
 
-When one computer application requires information from another, we generally create an api to make this possible.  We have chosen to create a RESTful api to act as the intermeditary between our system and yours. This approach enables a decoupling between the two systems, removing your reliance on Qualtrak to bring any changes from your api into production.
+When one computer application requires information from another, we generally create an API to make this possible.  We have chosen to create a RESTful API to act as the intermeditary between our system and yours. This approach enables a decoupling between the two systems, removing your reliance on Qualtrak to bring any changes from your api into production.
 
 How does it solve it?
 ---------------------

@@ -15,13 +15,13 @@ limit
 	This is the maximum recordings per agent to return. For instance, if this value is 10 and there are 50 recordings found for this agent, 40 recordings must not be returned.
 
 tenantCode
-	The is a unique identifier as used by **Coach**. An example is ``1000``.
+	The is an unique identifier as used by **Coach**. An example is ``1000``.
 
 userIds
-	A **List** of unique identifiers originating from the recorder to get recordings for.
+	This is an unique **List** of identifiers originating from the recorder to get recordings for.
 
 :ref:`SearchCriteria-label`
-	A **List** fo search crtieria to filter to recordings on.
+	A **List** of search crtieria to filter to recordings on.
 
 username
 	This is the username of the user who is currently signed into **Coach**.
@@ -56,7 +56,7 @@ You can also return other metadata.  This metadata will be displayed in **Coach*
 
 The above ``metadata`` json must be inserted into the returning ``RecordingInfo.Metadata`` object property.  There is no limitation on the amount of metadata you supply.
 
-This is how it the above looks in the Evaluation form:
+This is how the above looks in the Evaluation form:
 
 .. image:: /images/evaluation-metadata.PNG
    :alt: alternate text
@@ -67,4 +67,4 @@ This is how it the above looks in the Evaluation form:
 :ref:`SearchCriteria-label`
 ===========================
 
-The Search Criteria is a filter that is to be applied yours recordings.  If called from the Evaluation form, it is possible that no filter is supplied. If however, it is called from the **Schedule** then there will always be at least 2 criteria.
+The Search Criteria is a filter that is to be applied to your recordings.  If called from the Evaluation form, it is possible that no filter is supplied. If however, it is called from the **Schedule** then there will always be at least 2 criteria.

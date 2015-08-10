@@ -6,7 +6,7 @@ Install API
 
     You will need Visual Studio 2013 and PostMan
 
-Download RESTful api middleware
+Download RESTful API middleware
 ===============================
 
 Create a blank solution, ``e.g. integrations``. At the command line cd in the directory Visual Studio created.
@@ -19,12 +19,13 @@ You can clone the ``dataconnector`` git repository by:
 
 	git clone git@github.com:qualtrak/data-connector-api.git
 
-Next, please clone our sample recorder connector. This connector is what we use for QAing with:
+Next, please clone our sample recorder connector:
 
 .. code-block:: xml
 
 	git clone git@github.com:qualtrak/recorder-qa.git
 
+This connector is what we use when we carry out our QA.
 
 Your folder structure will now look like this:
 
@@ -64,14 +65,14 @@ Next, navigate to the **recorder-qa\\bin\\Debug** folder and copy the ``QATestRe
 
 We don't have to change the ninject.xml file now as the default contains the mappings to this QATestRecorder assembly.
 
-Finally, rebuild the solution.  You are now ready to run and serve up the DataConnector RESTful api.
+Finally, rebuild the solution.  You are now ready to run and serve up the DataConnector RESTful API.
 
 Confirm middleware deployment works
 ===================================
 
 Expand the Controllers folder in DataConnector project and open the ConnectorsController class.  Place a brakepoint on the Get method.
 
-Select the DataConnect project, right-click and ``Set as StartUp Project``. Now run the solution
+Select the DataConnect project, right-click and ``Set as StartUp Project``. Now run the solution.
 
 Copy the address, in my example it is ``http://localhost:20908/api/connector``, into PostMan and press ``Send``:
 

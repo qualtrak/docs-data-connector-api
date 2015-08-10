@@ -7,14 +7,14 @@ Here you will be shown how to build and test your ``connector``.
 How to create a connector
 =========================
 
-Add a new project to your Visual Studio solution.  For ease, reuse the QATestRecorder code but remove all the code in the methods and leaving the method signatures in play. 
+Add a new project to your Visual Studio solution.  For ease, reuse the QATestRecorder code but remove all the code in the methods and leaving the method signatures in play.
 
 I have created a new connector and called the project ``recorder-abc`` with the namespace of ``ABCRecorder``:
 
-.. image:: /images/my-recorder.PNG      
+.. image:: /images/my-recorder.PNG
    :alt: alternate text
    :align: center
-   
+
 How to interpret method parameters
 ==================================
 
@@ -32,13 +32,11 @@ Connector methods:
    api-getusers
    api-getrecordingsforusers
    api-getrecordingurl
-   api-getstream   
+   api-getstream
    api-postevaluationscore
-   
-   
- 
+
+
+
 .. important::
 
 	When you have built your recorder, copy its binary and any other binary that is required into the **data-connector-api\\bin** folder before you host the DataConnector
-
-  
