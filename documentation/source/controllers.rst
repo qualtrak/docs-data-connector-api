@@ -123,7 +123,7 @@ To return a list of users from the recorder connector.
 Dependency on:
 
     :ref:`RecorderUser <RecorderUser-label>`
-    	POCO that holds Recorder User information.
+    	Describes a Recorder User.
 
 
 .. _controller-recordings-label:
@@ -187,7 +187,7 @@ To get a list of recordings from the recorder connector for a specific **{userId
 
 .. code-block:: c#
    :linenos:
-   :emphasize-lines: 4,4
+   :emphasize-lines: 9
 
     [DeflateCompression]
     [Route("recorder/media/{userId}")]
@@ -210,10 +210,10 @@ To get a list of recordings from the recorder connector for a specific **{userId
 Dependency on:
 
     :ref:`Media <Media-label>`
-        POCO that holds Recording information.
+        Used to describe a recording from a Recorder.
 
     :ref:`MediaForUserArgs <MediaForUserArgs-label>`
-        POCO used to wrap the information required to return a subset of recordings from the recorder
+        Used to describe a filter to be applied by the Recorder when requests recordings.
 
 
 Get a list of Ids from arguments
@@ -258,10 +258,10 @@ Get the minimum inforation required by our randomizer for it to choose what reco
 Dependency on:
 
     :ref:`MediaUser <MediaUser-label>`
-        POCO that holds Recording information.
+        Used to describe the relationship between a recording and a recorder user.
 
     :ref:`MediaForUsersArgs <MediaForUsersArgs-label>`
-        POCO used to wrap the .....
+        Used to describe the search filter to be applied by the Recorder for recordings from a list of users.
 
 Get a list of Media from list of media Ids
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -305,10 +305,10 @@ Get recordings from the Recorder from the supplied list of Ids.
 Dependency on:
 
     :ref:`Media <Media-label>`
-        POCO that holds Recording information.
+        Used to describe a recording from a Recorder.
 
     :ref:`MediaByIds <MediaByIds-label>`
-        POCO used to wrap the information required .....
+        Used to contain a list of recording Ids for the Recorder to process.
 
 
 
@@ -354,7 +354,7 @@ To be used you want Evaluation headline scores to be persisted by the Recorder r
 Dependency on:
 
     :ref:`SendEvaluationScoreArgs <SendEvaluationScoreArgs-label>`
-	   POCO that holds evaluation information information.
+	   Contains the Headline Score of an Evaluation that is to be persisted by the Recorder.
 
 .. _controller-stream-label:
 

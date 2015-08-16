@@ -16,7 +16,7 @@ originalUrl
 	This is the original url. This is to be returned if you do not wish to make any modifications to the original url.
 
 :ref:`DataConnectorProperties <DataConnectorProperties-label>`
-	Used to store user credentials required for an authentication challenge at the recorder end point.
+	Describes the user credentials required for an authentication challenge by the Recorder.
 
 
 Please return either the originalUrl or a modified url.

@@ -10,6 +10,8 @@ These are the classes the the RESTful implementation depends on.  These ``classe
 RecorderUser
 ============
 
+Describes a Recorder User.
+
 **Namespace:** ::
 
     Qualtrak.Coach.DataConnector.Core.Recorder

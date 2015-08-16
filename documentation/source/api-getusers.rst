@@ -10,7 +10,7 @@ This method is to return a list of **RecorderUser**.
 	public Task<IEnumerable<RecorderUser>> GetUsersAsync(DataConnectorProperties properties)
 
 :ref:`DataConnectorProperties <DataConnectorProperties-label>`
-	Used to store user credentials required for an authentication challenge at the recorder end point.
+	Describes the user credentials required for an authentication challenge by the Recorder.
 
 
 Please return a **IEnumerable** of :ref:`RecorderUser-label` objects.
