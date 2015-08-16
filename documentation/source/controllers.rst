@@ -2,7 +2,7 @@
 Controllers
 ===========
 
-Controllers are the RESTful API end points.  These controllers act as the conduit between **oach** and your ``Connector`` implementation.  These controllers **should rarely change**.
+Controllers are the RESTful API end points.  These controllers act as the conduit between **Coach** and your ``Connector`` implementation.  These controllers **should rarely change**.
 
 
 BaseController
@@ -55,7 +55,7 @@ Connector
 Get Connector
 ~~~~~~~~~~~~~
 
-To be used to check that the connector is present. *Used predominatley by the Test Suite*.
+To be used to check that the connector is present. Used predominatley by the **Integration Tool**.
 
 **Namespace:** ::
 
