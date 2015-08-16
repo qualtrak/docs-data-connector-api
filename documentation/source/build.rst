@@ -50,7 +50,7 @@ Connector methods:
     You must not forget this next step. Failing to do so will result in your Data Connector not being called by the RESTful API middleware.
 
 We use an IoC container called Ninject.  Ninject needs to know how to call into to your implementation.  We use an xml file to provide this information to Ninject.  This file is found in the root folder of DataConnector project and is called ``ninject.xml``.
-You are required to change the ``to`` attribute.  Here in this example we see that our namespace is ``QATestRecorder.RecorderApiFacade`` and the assembly name is ``QATestRecorder`` :
+You are required to change the ``to`` attribute.  Here in this example we see that our namespace is ``ABCRecorder.RecorderApiFacade`` and the assembly name is ``ABCRecorder`` :
 
 .. code-block:: xml
    :linenos:
@@ -58,5 +58,5 @@ You are required to change the ``to`` attribute.  Here in this example we see th
     <?xml version="1.0" encoding="utf-8" ?>
     <module name="RecorderConfigurationModule">
     <bind service="Qualtrak.Coach.DataConnector.Core.Recorder.IRecorderApiFacade, Qualtrak.Coach.DataConnector.Core"
-         to="QATestRecorder.RecorderApiFacade, QATestRecorder" />
+         to="ABCRecorder.RecorderApiFacade, ABCRecorder" />
     </module>

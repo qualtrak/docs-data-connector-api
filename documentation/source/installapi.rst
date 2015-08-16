@@ -82,7 +82,7 @@ Copy the address, in my example it is ``http://localhost:20908/api/connector``, 
 
 You'll see the breakpoint hit:
 
-.. image:: /images/connector-controller-brakepoint-hit.PNG
+.. image:: /images/connector-controller-breakpoint-hit.PNG
    :alt: alternate text
    :align: center
 
