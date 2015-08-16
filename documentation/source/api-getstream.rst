@@ -1,13 +1,14 @@
 
-GetStream
-=========
+==============
+GetStreamAsync
+==============
 
 If you require some form of proxy intervention when getting a recording then this is programmatically the place to perform such an operations
 
 .. code-block:: c#
    :linenos:
 
-	public Stream GetStream(string url)
+   public Task<Stream> GetStreamAsync(string url)
 
 url
 	This is the url that will generate a stream and can be used as part of the url if you need to do something particular with the returned recording.

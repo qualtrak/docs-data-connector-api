@@ -19,6 +19,7 @@ Contents:
    concept
    controllers
    poco
+   enums
    server
    releasehistory
    qualtrak

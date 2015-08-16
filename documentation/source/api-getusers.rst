@@ -1,20 +1,16 @@
-GetUsers
-========
+=============
+GetUsersAsync
+=============
 
-This method is to return a list of Users.
+This method is to return a list of **RecorderUser**.
 
 .. code-block:: c#
    :linenos:
 
-	public List<RecorderUserInfo> GetUsers(string tenantCode, string username, string password)
+	public Task<IEnumerable<RecorderUser>> GetUsersAsync(DataConnectorProperties properties)
 
-tenantCode
-	The is a unique identifier as used by **Coach**. An example is ``1000``.
+:ref:`DataConnectorProperties <DataConnectorProperties-label>`
+	Used to store user credentials required for an authentication challenge at the recorder end point.
 
-username
-	This is the username of the user who is currently signed into **Coach**.
 
-password
-	This is the clear text password of the user who is currently signed into **Coach**.
-
-Please return a **List** of :ref:`RecorderUserInfo-label` objects.
+Please return a **IEnumerable** of :ref:`RecorderUser-label` objects.

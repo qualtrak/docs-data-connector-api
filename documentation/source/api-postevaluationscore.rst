@@ -1,40 +1,20 @@
-PostEvaluationScore
-===================
+========================
+SendEvaluationScoreAsync
+========================
 
 This method provides the mechanism to update your own data repository with Headline Scores assigned to an evaluation.
 
 .. code-block:: c#
    :linenos:
 
-	public void PostEvaluationScore(string tenantCode, string username, string password,
-		string evaluationId, string headlineScore, string extraScore, string userId,
-		string recordingId)
+   public Task SendEvaluationScoreAsync(SendEvaluationScoreArgs args, DataConnectorProperties properties)
 
 
+:ref:`SendEvaluationScoreArgs <SendEvaluationScoreArgs-label>`
+	This POCO is used to wrap the evaluation score information that is destined for the recorder.
 
-tenantCode
-	The is an unique identifier as used by **Coach**. An example is ``1000``.
-
-username
-	This is the username of the user who is currently signed into **Coach**.
-
-password
-	This is the clear text password of the user who is currently signed into **Coach**.
-
-evaluationId
-	This is a code originating from **Coach** that uniquely identifies a specific evaluation.
-
-headlineScore
-	This is the headline score assgined by the Supervisor for a given evaluation
-
-extraScore
-	This is the extra score assgined by the Supervisor for a given evaluation
-
-userId
-	This uniquely identifies an agent and originates from the recorder
-
-recordingId
-	This unique identifies a recording and originates from the recorder
+:ref:`DataConnectorProperties <DataConnectorProperties-label>`
+	Describes the user credentials required for an authentication challenge by the Recorder.
 
 
 This does not return anything.

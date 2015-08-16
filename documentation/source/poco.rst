@@ -1,100 +1,222 @@
+=======================
 Plain old class objects
------------------------
+=======================
 
 These are the classes the the RESTful implementation depends on.  These ``classes`` can be used to pass information to the RESTful API or used to wrap data being returned from the RESTful API.
 
 
-.. _RecorderUserInfo-label:
+.. _RecorderUser-label:
 
-================
-RecorderUserInfo
-================
+RecorderUser
+============
+
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Recorder
+
+**c# code:**
 
 .. code-block:: c#
    :linenos:
 
     [DataContract()]
-    public class RecorderUserInfo
+    public class RecorderUser
     {
         [DataMember]
-        public String FirstName { get; set; }
+        public string AccountId { get; set; }
 
         [DataMember]
-        public String LastName { get; set; }
+        public string FirstName { get; set; }
 
         //The Automatic Call Distributor ID uniquely identifies an agent with a device; device being the equipment the call is directed to.  This ID identifies this user
         [DataMember]
-        public String RecorderUserID { get; set; }
+        public string LastName { get; set; }
 
         //This is the unique identifier of a user account within the recorder
         [DataMember]
-        public String RecorderAcountID { get; set; }
+        public string Mail { get; set; }
 
         //This is the password of the user’s account.
         [DataMember]
-        public String RecorderAcountPassword { get; set; }
+        public string Password { get; set; }
 
         [DataMember]
-        public String Username { get; set; }
+        public string UserId { get; set; }
 
         [DataMember]
-        public String Password { get; set; }
-
-        [DataMember]
-        public int TenantCode { get; set; }
-
-        [DataMember]
-        public String Mail { get; set; }
+        public string Username { get; set; }
     }
 
 
-.. _RecordingInfo-label:
+.. _Media-label:
 
-=============
-RecordingInfo
-=============
+Media
+=====
+
+Used to describe a recording from a Recorder.
+
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Recorder
+
+**c# code:**
 
 .. code-block:: c#
    :linenos:
 
     [DataContract]
-    public class RecordingInfo
+    public class Media
     {
-        /// <summary>
-        /// Uniquely identifies the call from the client so we can ascertain (1) the schedule used for call and (2) the precise agent this is meant for
-        /// </summary>
         [DataMember]
-        public String Key { get; set; }
+        public string Id { get; set; }
 
-        //The code that uniquely identifies the recording, this could be a compound key
         [DataMember]
-        public String RecordingID { get; set; }
+        public string FileName { get; set; }
 
         //The name of the file that uniquely identifies the recording
         [DataMember]
-        public String RecordingFileName { get; set; }
+        public string RecorderUserId { get; set; }
 
         [DataMember]
-        public String RecorderUserID { get; set; }
-
-        [DataMember]
-        public DateTime? RecordingDate { get; set; }
-
-        [DataMember]
-        public int TenantCode { get; set; }
+        public DateTime? Date { get; set; }
 
         [DataMember]
         public string Metadata { get; set; }
     }
 
 
+
+
+.. _MediaForUserArgs-label:
+
+MediaForUserArgs
+================
+
+Used to describe a filter to be applied by the Recorder when requests recordings.
+
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Recorder.Args
+
+**c# code:**
+
+.. code-block:: c#
+   :linenos:
+
+    [DataContract]
+    public class MediaForUserArgs
+    {
+        [DataMember]
+        public int Limit { get; set; }
+
+        [DataMember]
+        public List<SearchCriteria> SearchCriteria { get; set; }
+
+        [DataMember]
+        public string TimeZone { get; set; }
+    }
+
+
+
+.. _MediaUser-label:
+
+MediaUser
+=========
+
+Used to describe the relationship between a recording and a recorder user.
+
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Recorder
+
+**c# code:**
+
+.. code-block:: c#
+   :linenos:
+
+    [DataContract]
+    public class MediaUser
+    {
+        [DataMember]
+        public string MediaId { get; set; }
+
+        [DataMember]
+        public string RecorderUserId { get; set; }
+    }
+
+
+
+.. _MediaForUsersArgs-label:
+
+MediaForUsersArgs
+=================
+
+Used to describe the search filter to be applied by the Recorder for recordings from a list of users.
+
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Recorder.Args
+
+**c# code:**
+
+.. code-block:: c#
+   :linenos:
+
+    [DataContract]
+    public class MediaForUsersArgs
+    {
+        [DataMember]
+        public int Limit { get; set; }
+
+        [DataMember]
+        public List<SearchCriteria> SearchCriteria { get; set; }
+
+        [DataMember]
+        public string TimeZone { get; set; }
+
+        [DataMember]
+        public IEnumerable<string> UserIds { get; set; }
+    }
+
+
+
+
+.. _MediaByIds-label:
+
+MediaByIds
+==========
+
+Used to contain a list of recording Ids for the Recorder to process.
+
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Recorder.Args
+
+**c# code:**
+
+.. code-block:: c#
+   :linenos:
+
+    [DataContract]
+    public class MediaByIds
+    {
+        [DataMember]
+        public IEnumerable<string> ids { get; set; }
+    }
+
+
 .. _SearchCriteria-label:
 
-=============
 SearchCriteria
-=============
+==============
 
-This POCO is used to wrap the search criteria that is destined for the recorder.
+Used to describe one search filter.
+
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Shared
+
+**c# code:**
 
 .. code-block:: c#
    :linenos:
@@ -122,13 +244,25 @@ This POCO is used to wrap the search criteria that is destined for the recorder.
     }
 
 
-.. _DataConnectorEvaluationScore-label:
 
-=============
-DataConnectorEvaluationScore
-=============
+Dependency on:
 
-This POCO is used to wrap the evaluation score information that is destined for the recorder.
+    :ref:`SearchCondition <SearchCondition-label>`
+    	Enum of all possible conditions.
+
+
+.. _SendEvaluationScoreArgs-label:
+
+SendEvaluationScoreArgs
+=======================
+
+Contains the Headline Score of an Evaluation that is to be persisted by the Recorder.
+
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Recorder.Args
+
+**c# code:**
 
 .. code-block:: c#
    :linenos:
@@ -138,67 +272,47 @@ This POCO is used to wrap the evaluation score information that is destined for 
     public class DataConnectorEvaluationScore : IDataConnectorEvaluationScore
     {
         [DataMember]
-        public string TenantCode { get; set; }
-
-        [DataMember]
-        public string Username { get; set; }
-
-        [DataMember]
-        public string Password { get; set; }
-
-        [DataMember]
         public string EvaluationId { get; set; }
-
-        [DataMember]
-        public string HeadlineScore { get; set; }
 
         [DataMember]
         public string ExtraScore { get; set; }
 
         [DataMember]
-        public string UserId { get; set; }
+        public string HeadlineScore { get; set; }
 
         [DataMember]
-        public string RecordingId { get; set; }
+        public string MediaId { get; set; }
+
+        [DataMember]
+        public string UserId { get; set; }
     }
 
+.. _DataConnectorProperties-label:
 
-.. _DataContractRecordingListFilter-label:
+DataConnectorProperties
+=======================
 
-=============
-DataContractRecordingListFilter
-=============
+Describes the user credentials required for an authentication challenge by the Recorder.
 
-This POCO is used to wrap the information required to return a subset of recordings from the recorder
+**Namespace:** ::
+
+    Qualtrak.Coach.DataConnector.Core.Shared
+
+**c# code:**
 
 .. code-block:: c#
    :linenos:
 
     [DataContract]
     [Serializable]
-    public class DataContractRecordingListFilter : IDataContractRecordingListFilter
+    public class DataConnectorProperties : IDataConnectorEvaluationScore
     {
         [DataMember]
-        public string Key { get; set; }
-
-        [DataMember]
-        public int Limit { get; set; }
+        public string Password { get; set; }
 
         [DataMember]
         public string TenantCode { get; set; }
 
         [DataMember]
-        public string UserId { get; set; }
-
-        [DataMember]
-        public List<SearchCriteria> SearchCriteria { get; set; }
-
-        [DataMember]
-        public string TimeZone { get; set; }
-
-        [DataMember]
         public string Username { get; set; }
-
-        [DataMember]
-        public string Password { get; set; }
     }

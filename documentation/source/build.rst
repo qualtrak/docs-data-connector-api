@@ -29,11 +29,15 @@ Connector methods:
 .. toctree::
    :titlesonly:
 
+   api-interface
    api-getusers
    api-getrecordingsforusers
+   api-getmediaforusers
+   api-getmediaforuser
    api-getrecordingurl
    api-getstream
    api-postevaluationscore
+   api-metadata
 
 
 
