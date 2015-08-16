@@ -328,7 +328,7 @@ To be used you want Evaluation headline scores to be persisted by the Recorder r
 
 **HTTP call:** ::
 
-    POST api/recorder/evalutionscore
+    POST api/recorder/evaluationscore
 
 **c# code:**
 
@@ -336,7 +336,7 @@ To be used you want Evaluation headline scores to be persisted by the Recorder r
    :linenos:
    :emphasize-lines: 8
 
-     [Route("recorder/evalutionscore")]
+     [Route("recorder/evaluationscore")]
      public async Task PostAsync(SendEvaluationScoreArgs args)
      {
          var client = NinjectWebCommon.Kernel.Get<IRecorderApiFacade>();
