@@ -51,6 +51,11 @@ It now hits your breakpoint. You will see ``1000`` is being passed as the **tena
 Test Recordings
 ===============
 
+Whenever you call upon your Data Connector to return a list of recordings, the process sequences through 2 stages.  The first stage requests a list of recordings with minimum data.  This list is then processed by our randomizer.  Once the randomizer has chosen which recordings it wants, it then calls the Data Connector a second time which is stage 2.  Stage 2 returns all the medatata data associated with the recordings.  These stages are shown next.  I have placed a breakpoint at the top of each method.
+
+Stage 1
+~~~~~~~
+
 Open your connector code and place breakpoint just inside of the **GetRecordingsForUsers** method.
 
 When you press the ``Test Media`` button you get presented with this modal and you press :kbd:`OK`
@@ -61,7 +66,7 @@ When you press the ``Test Media`` button you get presented with this modal and y
 
 It now hits your breakpoint. You first see a limit value. This is the maximum calls that Coach wants per agent. You will see ``1000`` is being passed as the **tenantCode**. Next you see that only 1 **userId* is passed.  Following this, you see that 4 search criteria have been passed. You will see `` `` for both username and password as the Integration Tool is not passing values for those.
 
-.. image:: /images/test-get-recordings.PNG
+.. image:: /images/test-get-recordings-1.PNG
    :alt: get recordings
    :align: center
 
@@ -69,16 +74,26 @@ It now hits your breakpoint. You first see a limit value. This is the maximum ca
 There is only one user passed in
 
 .. image:: /images/test-get-recordings-param-users.PNG
-   :alt: get recordings param usert
-   :align: left
+   :alt: get recordings param user
+   :align: center
 
+Here we see a 4 criteria in the **MediaForUsersArgs** listed
+
+.. image:: /images/test-get-recordings-param-criteria-full.PNG
+  :alt: get recordings param criteria
+  :align: center
 
 Here we see a 4 criteria listed
 
 .. image:: /images/test-get-recordings-param-criteria.PNG
    :alt: get recordings param criteria
-   :align: left
+   :align: center
 
+Here we see a the data connector credentials
+
+.. image:: /images/test-get-recordings-param-creds.PNG
+  :alt: get recordings param criteria
+  :align: center
 
 All criteria is expanded. Each criteria starts with an identifier, e.g. ``date_0``
 
@@ -96,6 +111,24 @@ Part of campaign
 
 Direction of call
     The last criteria that is passed has the identifier of ``call_direction_0``. Again, this condition is Equal and the value being passed is ``I``.
+
+Stage 2
+~~~~~~~
+
+Here you see the second method's breakpoint being hit:
+
+.. image:: /images/test-get-recordings.PNG
+   :alt: get recordings
+   :align: center
+
+Here is the list of media Ids being requested from the Data Connector after the randomization process has processed the original list:
+
+.. image:: /images/test-get-recordings-param-media-ids.PNG
+  :alt: get recordings
+  :align: center
+
+
+
 
 .. rubric:: Footnotes
 
