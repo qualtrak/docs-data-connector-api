@@ -6,7 +6,7 @@ These are the classes the the RESTful implementation depends on.  These ``classe
 
 .. important::
 
-    When returning the filename of the media back to Coach, you must only include the **filename.ext** (e.g. ``agent201506211015.wav``) and not the absolute filepath or url. Coach generates the url from the information provided in the **Recorder Media** configuration page
+    When returning the ``FileName`` of the media back to Coach, you must only include the **filename.ext** (e.g. ``agent201506211015.wav``) and not the absolute filepath or url. Coach generates the url from the information provided in the **Recorder Media** configuration page
 
 .. _RecorderUser-label:
 
