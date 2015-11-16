@@ -53,5 +53,3 @@ end
 service 'w3svc' do
     action [:enable, :start]
 end
-
-

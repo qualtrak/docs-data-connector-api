@@ -4,5 +4,5 @@ Conceptual Overview
 .. toctree::
    :titlesonly:
 
-   whatiscoach   
+   whatiscoach
    middleware   
