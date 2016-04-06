@@ -50,6 +50,12 @@ powershell_script 'Install IIS Mgmt Service' do
   not_if "(Get-WindowsFeature -Name  Web-Mgmt-Service).Installed"
 end
 
+powershell_script 'Install IIS Application Initialization' do
+  code 'Add-WindowsFeature Web-AppInit'
+  guard_interpreter :powershell_script
+  not_if "(Get-WindowsFeature -Name  Web-AppInit).Installed"
+end
+
 service 'w3svc' do
     action [:enable, :start]
 end
