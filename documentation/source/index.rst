@@ -14,13 +14,30 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
+   :caption: Important
+
+   before-you-start
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Implementation
 
    gettingstarted
    concept
    controllers
    poco
    enums
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Configuration
+
    server
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Other
+
    releasehistory
    qualtrak
    license

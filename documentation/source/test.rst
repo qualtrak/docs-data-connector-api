@@ -1,3 +1,5 @@
+.. _test-label:
+
 ===================
 Test your Connector
 ===================

@@ -60,3 +60,7 @@ You are required to change the ``to`` attribute.  Here in this example we see th
     <bind service="Qualtrak.Coach.DataConnector.Core.Recorder.IRecorderApiFacade, Qualtrak.Coach.DataConnector.Core"
          to="ABCRecorder.RecorderApiFacade, ABCRecorder" />
     </module>
+
+.. important::
+
+  Now copy the ``ninject.xml`` file into the **data-connector-api\\bin** folder before you host the DataConnector
