@@ -13,7 +13,7 @@ Data Connector
 
 There are 2 essential properties you must code for in your Data Connector implementation.  These are: Date Range and Limit.  Their respective importance are explained below:
 
-.. _bys_daterange_label
+.. _bys_daterange_label:
 
 ----------
 Date Range
@@ -25,7 +25,7 @@ It is therefore critical that you accommodate for a date range from within your 
 
 A date range consists of 2 searchCriteria items.  The Id of both items will be identical (this means both items are coupled) and the key will be the name you give to this field in the search criteria panel.
 
-.. _bys_limit_label
+.. _bys_limit_label:
 
 -----
 Limit

@@ -99,7 +99,7 @@ MediaForUserArgs
 
 .. important::
 
-    Please read the :ref:`<bys_limit_label>` section before continuing.
+    Please read the :ref:`Limit <bys_limit_label>` and :ref:`Date Range <bys_daterange_label>` sections before continuing.
 
 
 Used to describe a filter to be applied by the Recorder when requests recordings.
@@ -165,6 +165,10 @@ Used to describe the relationship between a recording and a recorder user.
 
 MediaForUsersArgs
 =================
+
+.. important::
+
+    Please read the :ref:`Limit <bys_limit_label>` and :ref:`Data Range <bys_daterange_label>` sections before continuing.
 
 Used to describe the search filter to be applied by the Recorder for recordings from a list of users.
 
