@@ -48,7 +48,7 @@ Integration Tool
 
 Our Integration Tool is accessible via our developer portal.  It is not OSS and it cannot be installed locally [within your infrastructure].  The first task you’ll be invited to perform it to confirm connectivity to your hosted Data Connector - :ref:`Test your Connector <test-label>`.  You must enable a public facing IP address and port for the Integration Tool to be able to reach your Data Connector end-point.  You will not be able to progress through the Integration Tool until it has confirmed connectivity with the Data Connector.  Please note, this does not mean that you must have completed the development work at this point in time.
 
-There are 1 of several outbound IP address the Integration Tool uses to communicate through so please add this list to your firewall:
+There are 1 of several outbound IP addresses the Integration Tool can use to communicate through so please add this list to your firewall:
 
 - 23.100.53.139
 - 23.100.53.152
