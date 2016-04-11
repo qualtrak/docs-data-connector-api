@@ -97,6 +97,11 @@ Used to describe a recording from a Recorder.
 MediaForUserArgs
 ================
 
+.. important::
+
+    Please read the :ref:`<bys_limit_label>` section before continuing.
+
+
 Used to describe a filter to be applied by the Recorder when requests recordings.
 
 **Namespace:** ::
