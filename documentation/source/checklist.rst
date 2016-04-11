@@ -28,7 +28,7 @@ Coding
 - [✔] Downloaded `Data Connector RESTful API <https://github.com/qualtrak/data-connector-api>`_ from github
 - [✔] Downloaded `QA Data Connector <https://github.com/qualtrak/recorder-qa>`_ from github to look at sample implementation
 - [✔] Implemented Data range in both ``GetMediaForUserAsync`` and ``GetMediaForUsersAsync`` so results are filtered on a period
-- [✔] Incorporated the Limit property in and :ref:`Checklist <MediaForUserArgs-label>` and :ref:`Checklist <MediaForUsersArgs-label>` so as to not return potentially millions of rows of data
+- [✔] Incorporated the Limit property in and :ref:`MediaForUserArgs <MediaForUserArgs-label>` and :ref:`MediaForUsersArgs <MediaForUsersArgs-label>` so as to not return potentially millions of rows of data
 - [✔] Received Email with link back to recorder configuration
 - [✔] Clicked on link included in Email and returned to recorder configuration
 - [✔] Tested :ref:`users import <test-users-label>` in Integration Tool 
