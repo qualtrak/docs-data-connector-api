@@ -32,6 +32,8 @@ Here, you will see that we have defined the search criteria as having 3 fields; 
    :alt: alternate text
    :align: center
 
+.. _test-users-label:
+
 Test Users
 ==========
 
@@ -49,6 +51,7 @@ It now hits your breakpoint. You will see ``1000`` is being passed as the **tena
    :alt: alternate text
    :align: center
 
+.. _test-recordings-label:
 
 Test Recordings
 ===============
@@ -66,7 +69,7 @@ When you press the ``Test Media`` button you get presented with this modal and y
    :alt: get recordings pre
    :align: center
 
-It now hits your breakpoint. You first see a limit value. This is the maximum calls that Coach wants per agent. You will see ``1000`` is being passed as the **tenantCode**. Next you see that only 1 **userId* is passed.  Following this, you see that 4 search criteria have been passed. You will see `` `` for both username and password as the Integration Tool is not passing values for those.
+It now hits your breakpoint. You first see a limit value. This is the maximum calls that Coach wants per agent. You will see ``1000`` is being passed as the **tenantCode**. Next you see that only 1 **userId** is passed.  Following this, you see that 4 search criteria have been passed. You will see `` `` for both username and password as the Integration Tool is not passing values for those.
 
 .. image:: /images/test-get-recordings-1.PNG
    :alt: get recordings

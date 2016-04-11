@@ -6,10 +6,14 @@ Before you start
 
 To help your integration go as smooth and trouble free as possible we have compiled this section.  Here we go into detail on those areas where we have received feedback on or have spent time working with our partners on questions posted via our `Service Desk <https://qualtrak.atlassian.net/servicedesk/customer/portal/7/>`_.
 
+Please also review the :ref:`Checklist <checklist-label>` we have compiled to assist you in making sure you have all your ducks lined up before completing the integration.
+
 Data Connector
 ==============
 
 There are 2 essential properties you must code for in your Data Connector implementation.  These are: Date Range and Limit.  Their respective importance are explained below:
+
+.. _bys_daterange_label
 
 ----------
 Date Range
@@ -20,6 +24,8 @@ An IntelliSearch profile will always pass a date range to the Data Connector.  T
 It is therefore critical that you accommodate for a date range from within your code.  The most efficient way to do this via our Integration Tool by adding a date field in the Search Criteria panel and setting it’s condition to Range.  With doing this and placing a breakpoint in VS, you will see the data structure that constitutes a date range.
 
 A date range consists of 2 searchCriteria items.  The Id of both items will be identical (this means both items are coupled) and the key will be the name you give to this field in the search criteria panel.
+
+.. _bys_limit_label
 
 -----
 Limit

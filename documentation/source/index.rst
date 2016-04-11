@@ -17,6 +17,7 @@ Contents:
    :caption: Important
 
    before-you-start
+   checklist
 
 .. toctree::
    :maxdepth: 1
